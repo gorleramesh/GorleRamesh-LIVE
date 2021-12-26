@@ -1,0 +1,297 @@
+body{
+    background:linear-gradient(45deg,red,violet);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+#logo{
+    height: 2rem;
+}
+.main-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 4;
+    height: 100vh;
+}
+#logo{
+    height: 2rem !important;
+}
+.one{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius:20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.smally{
+    font-size: 0.8rem;
+    display: inline;
+}
+.but{
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 10px rgb(30, 30, 31);
+    padding:8px;
+    border-radius: 25px;
+    color: #000;
+    text-decoration: none !important;
+   }
+   .but:hover{
+       color: red;
+   }
+.textbook{
+    height: 10rem;
+}
+.images{
+    height: 15rem !important;
+    border-radius: 5px !important;
+    ;
+}
+img{
+    height: 15rem !important;
+    border-radius: 5px !important;
+    ;
+}
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: initial;
+}
+.background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 22s linear infinite;
+    z-index: initial;
+
+}
+
+
+
+/*
+This tool saved my time a lot animation that i used is below is : https://wweb.dev/resources/animated-css-background-generator/
+ */
+.background li:nth-child(0) {
+    left: 74%;
+    width: 157px;
+    height: 157px;
+    bottom: -157px;
+    animation-delay: 1s;
+}
+.background li:nth-child(1) {
+    left: 66%;
+    width: 100px;
+    height: 100px;
+    bottom: -100px;
+    animation-delay: 1s;
+}
+.background li:nth-child(2) {
+    left: 3%;
+    width: 67px;
+    height: 67px;
+    bottom: -67px;
+    animation-delay: 3s;
+}
+.background li:nth-child(3) {
+    left: 45%;
+    width: 191px;
+    height: 191px;
+    bottom: -191px;
+    animation-delay: 13s;
+}
+.background li:nth-child(4) {
+    left: 58%;
+    width: 82px;
+    height: 82px;
+    bottom: -82px;
+    animation-delay: 1s;
+}
+.background li:nth-child(5) {
+    left: 74%;
+    width: 168px;
+    height: 168px;
+    bottom: -168px;
+    animation-delay: 10s;
+}
+.background li:nth-child(6) {
+    left: 85%;
+    width: 78px;
+    height: 78px;
+    bottom: -78px;
+    animation-delay: 22s;
+}
+.background li:nth-child(7) {
+    left: 65%;
+    width: 193px;
+    height: 193px;
+    bottom: -193px;
+    animation-delay: 32s;
+}
+.background li:nth-child(8) {
+    left: 15%;
+    width: 125px;
+    height: 125px;
+    bottom: -125px;
+    animation-delay: 32s;
+}
+.background li:nth-child(9) {
+    left: 82%;
+    width: 81px;
+    height: 81px;
+    bottom: -81px;
+    animation-delay: 8s;
+}
+.background li:nth-child(10) {
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    bottom: -80px;
+    animation-delay: 30s;
+}
+.background li:nth-child(11) {
+    left: 53%;
+    width: 110px;
+    height: 110px;
+    bottom: -110px;
+    animation-delay: 52s;
+}
+.background li:nth-child(12) {
+    left: 71%;
+    width: 107px;
+    height: 107px;
+    bottom: -107px;
+    animation-delay: 39s;
+}
+.background li:nth-child(13) {
+    left: 28%;
+    width: 93px;
+    height: 93px;
+    bottom: -93px;
+    animation-delay: 25s;
+}
+.background li:nth-child(14) {
+    left: 23%;
+    width: 158px;
+    height: 158px;
+    bottom: -158px;
+    animation-delay: 40s;
+}
+.background li:nth-child(15) {
+    left: 49%;
+    width: 172px;
+    height: 172px;
+    bottom: -172px;
+    animation-delay: 16s;
+}
+.background li:nth-child(16) {
+    left: 64%;
+    width: 175px;
+    height: 175px;
+    bottom: -175px;
+    animation-delay: 16s;
+}
+.background li:nth-child(17) {
+    left: 44%;
+    width: 138px;
+    height: 138px;
+    bottom: -138px;
+    animation-delay: 33s;
+}
+.background li:nth-child(18) {
+    left: 36%;
+    width: 119px;
+    height: 119px;
+    bottom: -119px;
+    animation-delay: 33s;
+}
+.background li:nth-child(19) {
+    left: 25%;
+    width: 121px;
+    height: 121px;
+    bottom: -121px;
+    animation-delay: 94s;
+}
+.background li:nth-child(20) {
+    left: 67%;
+    width: 185px;
+    height: 185px;
+    bottom: -185px;
+    animation-delay: 55s;
+}
+.background li:nth-child(21) {
+    left: 74%;
+    width: 131px;
+    height: 131px;
+    bottom: -131px;
+    animation-delay: 53s;
+}
+.background li:nth-child(22) {
+    left: 6%;
+    width: 168px;
+    height: 168px;
+    bottom: -168px;
+    animation-delay: 80s;
+}
+.background li:nth-child(23) {
+    left: 76%;
+    width: 103px;
+    height: 103px;
+    bottom: -103px;
+    animation-delay: 17s;
+}
+.background li:nth-child(24) {
+    left: 55%;
+    width: 159px;
+    height: 159px;
+    bottom: -159px;
+    animation-delay: 2s;
+}
+.background li:nth-child(25) {
+    left: 83%;
+    width: 145px;
+    height: 145px;
+    bottom: -145px;
+    animation-delay: 16s;
+}
+/*
+This tool saved my time a lot animation that i used is below is : https://wweb.dev/resources/animated-css-background-generator/
+ */
+ @media (max-width:768px) {
+     .main-body{
+         height: 100%;
+     }
+ }

@@ -1,0 +1,271 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+
+  font-family: sans-serif;
+  background: url("images/abhio.gif");
+background-repeat: no-repeat;
+background-size: cover;
+  background-color: rgba(255, 255, 255, 0.87) !important;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none !important;
+  color: #000 !important;
+  
+}
+
+.box {
+  width: 100%;
+
+}
+.illustration{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background:url("illus/shiny.svg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.illu_box{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 25px 0px ;
+  width: 80%;
+
+}
+
+.illu_box div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.abhi{
+height: 15rem;
+margin: 25px;
+  position: relative;
+}
+.odd{
+  flex-direction: row-reverse;
+}
+/*Main Content box*/
+.navigate {
+  display: flex;
+  height: 100vh;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  background: url("images/mainback.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border-bottom:solid 1px rgb(152, 77, 236) ; */
+}
+#logo {
+  height: 3rem;
+}
+#name {
+  font-size: 2rem;
+  color: #fff;
+}
+.profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50vw;
+  /* margin:0% 0% 0% 30%; */
+  height: 50vh;
+
+}
+#name_and_logo {
+  display: flex;
+  align-items: center;
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:50vh;
+
+}
+.sub_navigation {
+    margin: 1rem 0rem;
+
+
+}
+.all{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+}
+.social img{
+  margin: 10px;
+}
+footer{
+  background-color: #000;
+}
+.footlinks{
+  color:white;
+}
+.otherlinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+  flex-wrap: wrap;
+  
+}
+.otherlinks a{
+  margin: 10px;
+}
+.classes {
+  display: inline-flex;
+  /* background-color: #f3a5a7; */
+  /* border: solid 1px rgb(0, 0, 0); */
+  padding: 10px;
+  margin: 5px;
+  background-color: white;
+  position: relative;
+}
+.yt{
+  position: relative;
+}
+.yt:hover{
+  transform: scale(1.5);
+}
+.classes:hover{
+  color: rgb(252, 252, 147);
+    transform: scale(1.1);
+    background-color:#26ff4c;
+/* background: linear-gradient(45deg,rgb(144, 248, 144),rgb(252, 252, 147),#f3a5a7);     */
+/* border: none; */
+/* border-radius: 25px; */
+/* border: solid 0.5px; */
+    color: white;
+}
+.classes a:hover{
+  color: white;
+}
+@keyframes topup {
+  0%{
+ transform: translateY(45px);
+  }
+}
+@keyframes zoomout {
+  0%{
+ transform: translateX(50px);
+  }
+}
+@keyframes topright {
+  0%{
+ transform: translateX(45px);
+
+  }
+}
+@keyframes topleft {
+  0%{
+ transform: translateX(-45px);
+
+  }
+}
+
+@media (max-width: 768px) {
+  .illu_box{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .box {
+    height: 100vh;
+  }
+.body{
+  background: url("images/cool.gif");
+  background-position: center;
+}
+  
+  .navigate{
+    
+    background: url("images/phone.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+  
+  .profile {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    
+  }
+  .navigate {
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  #name{
+      font-size: 1.3rem;
+  }
+  .navigation {
+    margin: 0%;
+    justify-content: flex-end;
+  
+  }
+  
+  .sub_navigation {
+    margin: 1rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@keyframes topdown {
+  0%{
+top: 25px;  }
+}
+@keyframes zoomout {
+  0%{
+ transform: scale(0.9);
+
+  }
+}
+@keyframes topright {
+  0%{
+ transform: translateY(-45px);
+
+  }
+}
+@keyframes topleft {
+  0%{
+ transform: translateX(-45px);
+
+  }
+}
