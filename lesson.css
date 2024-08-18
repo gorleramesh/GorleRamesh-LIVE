@@ -112,6 +112,14 @@ a{
     padding: 10%;
   }
 }
+
+.multipleLessons{
+display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+}
 @media (max-width: 768px) {
   a{
       font-size: 1;
