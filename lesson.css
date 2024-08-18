@@ -48,6 +48,13 @@ a {
   justify-content: center;
   padding: 0% 30%;
 }
+.multipleLessons{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: flex-start;
+align-items: center;
+}
 a{
   color: #fff ;
 
@@ -113,13 +120,7 @@ a{
   }
 }
 
-.multipleLessons{
-display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: center;
-}
+
 @media (max-width: 768px) {
   a{
       font-size: 1;
