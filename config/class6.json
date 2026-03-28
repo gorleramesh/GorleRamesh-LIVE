@@ -1,0 +1,269 @@
+[
+  {
+    "class": "6",
+    "subject": "6th Maths English mediun \n AP & Telangana",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "Chapter 1",
+        "topic": "Geometry          ..               జ్యామితి",
+        "priority": 1,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/c7bBz6iAPV4?si=GFpbil_H4_T8XQYm"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/yqFvN5Oexmw?si=SWlD_HpzqtLVkocn"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=BlVKTdRupno93ErT"
+          },
+          {
+            "name": "Video 7",
+            "description": "",
+            "link": "https://www.youtube.com/embed/ruvE6HUJM-s?si=tvpo7acnY66xJMvh"
+          },
+          {
+            "name": "Video 8",
+            "description": "",
+            "link": "https://www.youtube.com/embed/2D7f0mB9nGA?si=i8lAyNOk9OilBjEe"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "6",
+    "subject": "6th Maths Telugu mediun \n AP & Telangana",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "Chapter 1",
+        "topic": "జ్యామితి",
+        "priority": 1,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=YgxffOE27NBaMFWh"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/c7bBz6iAPV4?si=re4v1BbpbtoB0PMn"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=k3a23_7mOZJ-Q8DS"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "6",
+    "subject": "6th Science English mediun \nAP & Telangana",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "Chapter 1",
+        "topic": "Changes Around Us..మన చుట్టూ జరిగే మార్పులు",
+        "priority": 1,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=2AFcKrP_Xtund7h3"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/7aGFIwShxts?si=lw2myAS389maqDym"
+          }
+        ]
+      },
+      {
+        "chapter": "Chapter 2",
+        "topic": "Simple Electric Circuits..సాధారణ విద్యుత్ వలయాలు",
+        "priority": 2,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=9XAz6BszsO3Da6Rb"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=flOWnCarPxmAGrIB"
+          }
+        ]
+      },
+      {
+        "chapter": "Chapter 3",
+        "topic": "Light, Shadows and Images..కాంతి - నీడలు - ప్రతిబింబాలు",
+        "priority": 3,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=oTvuAzXKtaKZHUPT"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=zowpdPas6ipbwbrv"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Tddwg4uwyX0?si=ygPxhaYYMju4-XKT"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=NX2tniY9J_UmPS3_"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "6",
+    "subject": "6th Science Telugu mediun \nAP & Telangana",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "Chapter 1",
+        "topic": "మన చుట్టూ జరిగే మార్పులు",
+        "priority": 1,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/7aGFIwShxts?si=lw2myAS389maqDym"
+          }
+        ]
+      },
+      {
+        "chapter": "Chapter 2",
+        "topic": "సాధారణ విద్యుత్ వలయాలు",
+        "priority": 2,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=flOWnCarPxmAGrIB"
+          }
+        ]
+      },
+      {
+        "chapter": "Chapter 3",
+        "topic": "కాంతి - నీడలు - ప్రతిబింబాలు",
+        "priority": 3,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=zowpdPas6ipbwbrv"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=NX2tniY9J_UmPS3_"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "6",
+    "subject": "6th NCERT",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "Chapter 1",
+        "topic": "Light, Shadows and Reflections",
+        "priority": 1,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=crvumOGWS9iP6ltx"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/xZ-QmJwOiEM?si=58Cs0wCs5cQ2y6l2"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Y9AtuZg9SWM?si=8IJonjv0A4xeDygY"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/WZ8Fcm1k0Z8?si=ElROIvWWQv9oXR6q"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/FbyVsn2HgYs?si=kJgKWqbLbHntbtbV"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/BxXfp7z2stk?si=hJpQJNfc_-SSvXN1"
+          }
+        ]
+      },
+      {
+        "chapter": "Chapter 2",
+        "topic": "Electricity and Circuits",
+        "priority": 2,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=Rh_4AcqO3tjaB7zA"
+          }
+        ]
+      },
+      {
+        "chapter": "Chapter 3",
+        "topic": "Air around us",
+        "priority": 3,
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=xNZUvVzC6y6eidfj"
+          }
+        ]
+      }
+    ]
+  }
+]

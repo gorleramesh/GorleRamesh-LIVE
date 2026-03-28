@@ -1,0 +1,557 @@
+[
+  {
+    "class": "10",
+    "subject": "Chemistry",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "1. Chemical Reactions and Equations",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/UJsfra4win8?si=R3sDblM6X0Hr7D2k",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/LtiVHBNQPBo?si=MD1Hp9EPghLX9Vj6",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/eeR5_lV8to8?si=TzNDjut7Hxg679WN",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/yPdvYnWgODg?si=VWUQG402HxAFE1IO",
+            "type": "video"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/33vWt_jxxb8?si=WH6wtPdD2jKmvajR",
+            "type": "video"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/fv7nfVUo_LQ?si=xtBIUsVzSanxcQdb",
+            "type": "video"
+          },
+          {
+            "name": "Video 7",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Q3a68_wIHW8?si=uYo3edXGfmuhH_ai",
+            "type": "video"
+          },
+          {
+            "name": "Video 8",
+            "description": "",
+            "link": "https://www.youtube.com/embed/vLGWGdWpCQw?si=erpZ2yZ7qBApEc0w",
+            "type": "video"
+          },
+          {
+            "name": "Video 9",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=4BO8ZXfOQ33O2338",
+            "type": "video"
+          },
+          {
+            "name": "Video 10",
+            "description": "",
+            "link": "https://www.youtube.com/embed/7aGFIwShxts?si=yLqs1jfCzR2_9gyf",
+            "type": "video"
+          },
+          {
+            "name": "Video 11",
+            "description": "",
+            "link": "https://www.youtube.com/embed/8KxJeChqud0?si=jqX1t36S2y76OqJU",
+            "type": "video"
+          },
+          {
+            "name": "Video 12",
+            "description": "",
+            "link": "https://www.youtube.com/embed/lTaz5VgpJUc?si=YeUlHDPlF_2PotHZ",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "2. Acids, Bases and Salts",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/BxW0fqP6hig?si=1utgBu8X4jROB6_v",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/q2_NVgeOthk?si=9Tf5BqTW9SoZMShy",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/3I1Cs--FmEg?si=uQO4D3QEJLZZtYp-",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/KfwIsdgqBcY?si=9_YsDisTrOZx5iNu",
+            "type": "video"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/7nLee21Y0O8?si=8blOKnIKCL7QD4aU",
+            "type": "video"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/eqBRIGh7urc?si=J4orliUirxX-DUHv",
+            "type": "video"
+          },
+          {
+            "name": "Video 7",
+            "description": "",
+            "link": "https://www.youtube.com/embed/LEaCv4g8iDU?si=7L0SHP5TrgAzMQUF",
+            "type": "video"
+          },
+          {
+            "name": "Video 8",
+            "description": "",
+            "link": "https://www.youtube.com/embed/f6CmRXv5yR4?si=aZ6jHaodWOPI5_Lb",
+            "type": "video"
+          },
+          {
+            "name": "Video 9",
+            "description": "",
+            "link": "https://www.youtube.com/embed/dveBWq7OPtw?si=UT-Es2NDcA2HUpin",
+            "type": "video"
+          },
+          {
+            "name": "Video 10",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Kobb90Mz9Ao?si=3WeZmZkVhCPoXMtF",
+            "type": "video"
+          },
+          {
+            "name": "Video 11",
+            "description": "",
+            "link": "https://www.youtube.com/embed/iweGtPdO3BY?si=bR0GggJLTUhMEPJG",
+            "type": "video"
+          },
+          {
+            "name": "Video 12",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Z9E1PsXJEco?si=Z4NbNHTPMyxAtJkT",
+            "type": "video"
+          },
+          {
+            "name": "Video 13",
+            "description": "",
+            "link": "https://www.youtube.com/embed/C9R4g8aH3Tw?si=fOPpID4Y1fLZdjXD",
+            "type": "video"
+          },
+          {
+            "name": "Video 14",
+            "description": "",
+            "link": "https://www.youtube.com/embed/3DC5RE2rFM8?si=zLDY0YUA_2_slDS5",
+            "type": "video"
+          },
+          {
+            "name": "Video 15",
+            "description": "",
+            "link": "https://www.youtube.com/embed/-F8Ox4yUimM?si=1af0gGyXdWZOtN_i",
+            "type": "video"
+          },
+          {
+            "name": "Video 16",
+            "description": "",
+            "link": "https://www.youtube.com/embed/XixmnPtp6y0?si=lJLPiob3iKvwXxP-",
+            "type": "video"
+          },
+          {
+            "name": "Video 17",
+            "description": "",
+            "link": "https://www.youtube.com/embed/hiy1qqoDGb4?si=dTNvcn-cojIZgjCW",
+            "type": "video"
+          },
+          {
+            "name": "Video 18",
+            "description": "",
+            "link": "https://www.youtube.com/embed/3miqcfM7As4?si=noyIE0AOItI_pkLT",
+            "type": "video"
+          },
+          {
+            "name": "Video 19",
+            "description": "",
+            "link": "https://www.youtube.com/embed/XKYBq1pklJ0?si=Lzww8TYqhH56YvFI",
+            "type": "video"
+          },
+          {
+            "name": "Video 20",
+            "description": "",
+            "link": "https://www.youtube.com/embed/QTFsEiGCa2s?si=gGS8AdsGCSkpuwC8",
+            "type": "video"
+          },
+          {
+            "name": "Video 21",
+            "description": "",
+            "link": "https://www.youtube.com/embed/4JPRXl55x64?si=zDHOSbQ7oT8_baL9",
+            "type": "video"
+          },
+          {
+            "name": "Video 22",
+            "description": "",
+            "link": "https://www.youtube.com/embed/nJH1T7tx2TM?si=xrqtzGXmR2J9y0nj",
+            "type": "video"
+          },
+          {
+            "name": "Video 23",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Oy7A2sYEXlA?si=p55CWvEcW-RWrlBl",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "3. Metals and Non-Metals",
+        "subtopics": [],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "4. Carbon and it's Compounds",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/VXBiviMbruM?si=Ac4IbUsHY3oo01Ez",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Vl3F4eBSRrE?si=sl21uqn9ugeoTBvr",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/1A-CQDeUoQ8?si=Kg2i-_oa8Vq2HsYA",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/juD_4gGWSH0?si=iQOQjUI1BzKcyEr3",
+            "type": "video"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Np3Wmry1Tmw?si=7Y6YTpN2YuvyDB4g",
+            "type": "video"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/aXMnCJaAyrA?si=JSs0iUjIfthTjhDb",
+            "type": "video"
+          },
+          {
+            "name": "Video 7",
+            "description": "",
+            "link": "https://www.youtube.com/embed/0gZClOE7wYg?si=df23cZytl9bOKuf3",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "10",
+    "subject": "Physics",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "9. Light - Reflection and Refraction",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=yVMWcmapvtMO6GII",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=5HR22Eb3dkZhyBB8",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Tddwg4uwyX0?si=6N6vixexXHpD-e4D",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=SLhOPd5lrC4UXt8X",
+            "type": "video"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/e7ZuV9A_DxU?si=SfkAWHH-5_wY5905",
+            "type": "video"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/pAn1wVwPFTg?si=t6WBnFQz1KFIskS1",
+            "type": "video"
+          },
+          {
+            "name": "Video 7",
+            "description": "",
+            "link": "https://www.youtube.com/embed/d1xbYwrNaFc?si=hkA6nOYYThSd3mHo",
+            "type": "video"
+          },
+          {
+            "name": "Video 8",
+            "description": "",
+            "link": "https://www.youtube.com/embed/0swgEvwZT0A?si=LENdNEFNsdRUFYau",
+            "type": "video"
+          },
+          {
+            "name": "Video 9",
+            "description": "",
+            "link": "https://www.youtube.com/embed/tCQjqirC2Bo?si=d7vsr4yXkETSMj6H",
+            "type": "video"
+          },
+          {
+            "name": "Video 10",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Gs_QjJdOQiM?si=xKOomq9x82kxR9dl",
+            "type": "video"
+          },
+          {
+            "name": "Video 11",
+            "description": "",
+            "link": "https://www.youtube.com/embed/poQlc4I12vU?si=AxBtJ2ELf7fYgkql",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "10. The Human Eye and the Colourful World",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/IkKHuNv1QiM?si=UWPwz4_xX9oiDAcr",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/9gRkvyX9-BI?si=XIpU1k_-ehgRfOg8",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/xwxNMzDh7Vc?si=l8680sAGXM78CRr_",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/NJKgOy6SfvI?si=2ZMkqiFDUqVSDhCp",
+            "type": "video"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/LbNYGRewiN0?si=Akpt6u1iT4SunYzn",
+            "type": "video"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/OoBg9qgCvrU?si=maxzk7zDT7tF0rmA",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "11. Electricity",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=VZR-sUM3tqROJEl5",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "12. Magnetic Effects of Elecrtic current",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/VX50G9D30rs?si=k4Il5IeprfdFEyPb",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter10PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter10PS TM.html",
+            "type": "html"
+          }
+        ]
+      }
+    ]
+  }
+]
