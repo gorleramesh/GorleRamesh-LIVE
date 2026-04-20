@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Config Editor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body { background: #f7f9fa; padding-top: 70px; }
+        .navbar-custom { background: #a435f0; color: white; }
+        .card { margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .card-header { background: white; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .chapter-box { border: 1px solid #e7e9ec; padding: 15px; margin-bottom: 15px; border-radius: 5px; background: #fafbfc; }
+        .subtopic-box { border: 1px solid #d1d7dc; padding: 10px; margin-bottom: 10px; border-radius: 5px; background: white; }
+        .resource-box { border: 1px solid #d1d7dc; padding: 10px; margin-bottom: 10px; border-radius: 5px; background: #fdfdfd; }
+        .btn-icon { cursor: pointer; color: #dc3545; background: none; border: none; }
+        .btn-icon:hover { color: #bd2130; }
+        .json-preview { background: #29303b; color: #fff; padding: 15px; border-radius: 5px; max-height: 70vh; overflow-y: auto; font-family: monospace; font-size: 12px; }
+        [v-cloak] { display: none; }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fas fa-edit"></i> Config Editor</a>
+                <div class="d-flex align-items-center">
+                    <select v-model="selectedClass" class="form-control form-control-sm mr-2" style="width: auto;">
+                        <option value="6">Class 6</option>
+                        <option value="7">Class 7</option>
+                        <option value="8">Class 8</option>
+                        <option value="9">Class 9</option>
+                        <option value="10">Class 10</option>
+                    </select>
+                    <button class="btn btn-light btn-sm mr-2" @click="loadConfig">Load File</button>
+                    <button class="btn btn-warning btn-sm mr-2" @click="downloadJSON"><i class="fas fa-download"></i> Download Updated JSON</button>
+                    <a href="index.html" class="btn btn-outline-light btn-sm">Back to App</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid mt-4">
+            <div class="row" v-if="courseData && courseData.length >= 0">
+                <div class="col-md-8">
+                    <h4 class="mb-3">Editing: config/class{{selectedClass}}.json</h4>
+                    
+                    <!-- Subjects Loop -->
+                    <div class="card" v-for="(subjectBlock, sIndex) in courseData" :key="sIndex">
+                        <div class="card-header">
+                            <span><i class="fas fa-book"></i> Subject Block {{sIndex + 1}} ({{subjectBlock.subject || 'New'}} - {{subjectBlock.medium || 'English'}})</span>
+                            <button class="btn btn-sm btn-danger" @click="removeSubject(sIndex)"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label>Class</label>
+                                    <input type="text" class="form-control form-control-sm" v-model="subjectBlock.class">
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label>Subject</label>
+                                    <input type="text" class="form-control form-control-sm" v-model="subjectBlock.subject">
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label>Medium</label>
+                                    <select class="form-control form-control-sm" v-model="subjectBlock.medium">
+                                        <option value="English">English</option>
+                                        <option value="Telugu">Telugu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <h6 class="mt-2">Course Overview</h6>
+                            <div class="row" v-if="subjectBlock.courseOverview">
+                                <div class="col-md-8 form-group">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Description" v-model="subjectBlock.courseOverview.description">
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Duration (e.g., Full Year)" v-model="subjectBlock.courseOverview.duration">
+                                </div>
+                            </div>
+                            <div v-else>
+                                <button class="btn btn-sm btn-outline-secondary mb-3" @click="subjectBlock.courseOverview = {description: '', duration: ''}">+ Add Course Overview</button>
+                            </div>
+                            
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6>Chapters</h6>
+                                <button class="btn btn-sm btn-primary" @click="addChapter(subjectBlock)"><i class="fas fa-plus"></i> Add Chapter</button>
+                            </div>
+
+                            <!-- Chapters Loop -->
+                            <div class="chapter-box" v-for="(chapter, cIndex) in subjectBlock.chapterwisedetails" :key="cIndex">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="input-group input-group-sm w-75">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Chapter Name</span>
+                                        </div>
+                                        <input type="text" class="form-control font-weight-bold" v-model="chapter.chapter">
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-danger" @click="removeChapter(subjectBlock, cIndex)"><i class="fas fa-trash"></i></button>
+                                </div>
+
+                                <div class="row">
+                                    <!-- Videos/Subtopics -->
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between align-items-center mb-1 mt-2">
+                                            <small class="font-weight-bold text-secondary">Videos / Subtopics</small>
+                                            <button class="btn btn-xs btn-outline-success" style="font-size: 10px;" @click="addSubtopic(chapter)"><i class="fas fa-plus"></i> Add Video</button>
+                                        </div>
+                                        <div class="subtopic-box" v-for="(video, vIndex) in chapter.subtopics" :key="'v'+vIndex">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <span style="font-size: 11px; font-weight: bold; color: #a435f0;">Video {{vIndex + 1}}</span>
+                                                <button class="btn-icon" @click="removeSubtopic(chapter, vIndex)"><i class="fas fa-times"></i></button>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm mb-1" placeholder="Video Name" v-model="video.name">
+                                            <input type="text" class="form-control form-control-sm mb-1" placeholder="Description (Optional)" v-model="video.description">
+                                            <input type="text" class="form-control form-control-sm mb-1" placeholder="YouTube Embed Link" v-model="video.link">
+                                        </div>
+                                    </div>
+
+                                    <!-- Resources -->
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between align-items-center mb-1 mt-2">
+                                            <small class="font-weight-bold text-secondary">Resources</small>
+                                            <button class="btn btn-xs btn-outline-info" style="font-size: 10px;" @click="addResource(chapter)"><i class="fas fa-plus"></i> Add Resource</button>
+                                        </div>
+                                        <div class="resource-box" v-for="(resource, rIndex) in chapter.resources" :key="'r'+rIndex">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <span style="font-size: 11px; font-weight: bold; color: #17a2b8;">Resource {{rIndex + 1}}</span>
+                                                <button class="btn-icon" @click="removeResource(chapter, rIndex)"><i class="fas fa-times"></i></button>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm mb-1" placeholder="Resource Name" v-model="resource.name">
+                                            <input type="text" class="form-control form-control-sm mb-1" placeholder="Link/URL" v-model="resource.link">
+                                            <select class="form-control form-control-sm" v-model="resource.type">
+                                                <option value="html">HTML / Link</option>
+                                                <option value="pdf">PDF Document</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success mb-5" @click="addSubjectBlock"><i class="fas fa-plus"></i> Add New Subject Block</button>
+                </div>
+
+                <!-- Right Side: JSON Preview -->
+                <div class="col-md-4">
+                    <div class="sticky-top" style="top: 80px;">
+                        <h5 class="mb-3">Live JSON Preview</h5>
+                        <p style="font-size: 12px; color: #6a6f73;">This represents exactly what will be saved. Click the Download button in the navbar when you are finished.</p>
+                        <pre class="json-preview">{{ formattedJSON }}</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div v-else-if="loading" class="text-center mt-5">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2">Loading data...</p>
+            </div>
+            
+            <div v-else class="text-center mt-5">
+                <h4>Please select a class and click "Load File" to edit its configuration.</h4>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    selectedClass: '6',
+                    courseData: null,
+                    loading: false
+                }
+            },
+            computed: {
+                formattedJSON() {
+                    return this.courseData ? JSON.stringify(this.courseData, null, 2) : '';
+                }
+            },
+            mounted() {
+                // Auto load initial class
+                this.loadConfig();
+            },
+            methods: {
+                async loadConfig() {
+                    this.loading = true;
+                    this.courseData = null;
+                    try {
+                        const response = await fetch(`./config/class${this.selectedClass}.json?t=${new Date().getTime()}`);
+                        if (response.ok) {
+                            this.courseData = await response.json();
+                        } else {
+                            // If file doesn't exist, start with an empty array
+                            this.courseData = [];
+                            alert('No existing configuration found for this class. Started with a blank template.');
+                        }
+                    } catch (err) {
+                        console.error('Error loading config:', err);
+                        this.courseData = [];
+                    }
+                    this.loading = false;
+                },
+                addSubjectBlock() {
+                    if (!this.courseData) this.courseData = [];
+                    this.courseData.push({
+                        class: this.selectedClass,
+                        subject: "New Subject",
+                        medium: "English",
+                        courseOverview: { description: "Brief description of the course.", duration: "Full Year" },
+                        chapterwisedetails: []
+                    });
+                },
+                removeSubject(index) {
+                    if(confirm('Are you sure you want to delete this entire subject block?')) {
+                        this.courseData.splice(index, 1);
+                    }
+                },
+                addChapter(subjectBlock) {
+                    if(!subjectBlock.chapterwisedetails) subjectBlock.chapterwisedetails = [];
+                    subjectBlock.chapterwisedetails.push({
+                        chapter: "New Chapter Name",
+                        subtopics: [],
+                        resources: []
+                    });
+                },
+                removeChapter(subjectBlock, index) {
+                    if(confirm('Are you sure you want to delete this chapter and all its videos/resources?')) {
+                        subjectBlock.chapterwisedetails.splice(index, 1);
+                    }
+                },
+                addSubtopic(chapter) {
+                    if(!chapter.subtopics) chapter.subtopics = [];
+                    chapter.subtopics.push({
+                        name: "New Video",
+                        description: "",
+                        link: "",
+                        type: "video"
+                    });
+                },
+                removeSubtopic(chapter, index) {
+                    chapter.subtopics.splice(index, 1);
+                },
+                addResource(chapter) {
+                    if(!chapter.resources) chapter.resources = [];
+                    chapter.resources.push({
+                        name: "New Resource",
+                        link: "",
+                        type: "html"
+                    });
+                },
+                removeResource(chapter, index) {
+                    chapter.resources.splice(index, 1);
+                },
+                downloadJSON() {
+                    if (!this.courseData) return;
+                    
+                    // Create a blob from the JSON string
+                    const jsonString = JSON.stringify(this.courseData, null, 2);
+                    const blob = new Blob([jsonString], {type: "application/json"});
+                    const url  = URL.createObjectURL(blob);
+                    
+                    // Create an anchor tag to trigger download
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `class${this.selectedClass}.json`;
+                    
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    alert(`Downloaded class${this.selectedClass}.json!\n\nIMPORTANT: To apply your changes, move the downloaded file into your project's "config" folder, replacing the old file.`);
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
