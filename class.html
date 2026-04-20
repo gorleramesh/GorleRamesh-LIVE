@@ -536,6 +536,49 @@
             window.history.replaceState({}, '', newUrl);
         }
 
+        // Generate a unique key for storing progress (includes class and subject)
+        function getStorageKey() {
+            return `course_progress_class${currentClass}_${currentSubject || 'none'}`;
+        }
+
+        // Save completed lessons to localStorage
+        function saveProgress() {
+            try {
+                const key = getStorageKey();
+                localStorage.setItem(key, JSON.stringify(completedLessons));
+            } catch (error) {
+                console.error('Error saving progress to localStorage:', error);
+            }
+        }
+
+        // Load completed lessons from localStorage
+        function loadProgress() {
+            try {
+                const key = getStorageKey();
+                const saved = localStorage.getItem(key);
+                completedLessons = saved ? JSON.parse(saved) : [];
+            } catch (error) {
+                console.error('Error loading progress from localStorage:', error);
+                completedLessons = [];
+            }
+        }
+
+        // Clear progress for current subject (useful for testing)
+        function clearProgress() {
+            try {
+                const key = getStorageKey();
+                localStorage.removeItem(key);
+                completedLessons = [];
+                updateProgress();
+                // Update all checkboxes to be unchecked
+                document.querySelectorAll('.lesson-checkbox').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+            } catch (error) {
+                console.error('Error clearing progress:', error);
+            }
+        }
+
         function updateProgress() {
             const totalLessons = allLessons.length;
             const progress = totalLessons > 0 ? Math.round((completedLessons.length / totalLessons) * 100) : 0;
@@ -614,6 +657,7 @@
                 completedLessons = completedLessons.filter(l => l !== lessonName);
             }
             updateProgress();
+            saveProgress(); // Save to localStorage whenever progress changes
         }
 
         function populateSubjectDropdown() {
@@ -704,6 +748,9 @@
                 return;
             }
 
+            // Load progress for this subject BEFORE rendering
+            loadProgress();
+
             const sidebarContent = document.getElementById('sidebar-content');
             sidebarContent.innerHTML = '';
             allLessons = [];
@@ -743,6 +790,9 @@
                             checkbox.type = 'checkbox';
                             checkbox.className = 'lesson-checkbox';
                             const lessonDisplayName = currentMedium === 'Telugu' ? (lesson.nameTelugu || lesson.name) : lesson.name;
+                            
+                            // Check if this lesson was previously completed
+                            checkbox.checked = completedLessons.includes(lessonDisplayName);
                             checkbox.onchange = () => toggleLessonCheckbox(checkbox, lessonDisplayName);
 
                             const lessonInfo = document.createElement('div');
