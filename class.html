@@ -568,9 +568,9 @@
             window.history.replaceState({}, '', newUrl);
         }
 
-        // Generate a unique key for storing progress (includes class and subject)
+        // Generate a unique key for storing progress (includes class, subject, and medium)
         function getStorageKey() {
-            return `course_progress_class${currentClass}_${currentSubject || 'none'}`;
+            return `course_progress_class${currentClass}_${currentSubject || 'none'}_${currentMedium || 'English'}`;
         }
 
         // Save completed lessons to localStorage
@@ -613,7 +613,13 @@
 
         function updateProgress() {
             const totalLessons = allLessons.length;
-            const progress = totalLessons > 0 ? Math.round((completedLessons.length / totalLessons) * 100) : 0;
+            
+            // Only count completed lessons that currently exist in the loaded course data
+            const validCompletedCount = completedLessons.filter(lessonId => allLessons.includes(lessonId)).length;
+            
+            let progress = totalLessons > 0 ? Math.round((validCompletedCount / totalLessons) * 100) : 0;
+            if (progress > 100) progress = 100; // Cap at 100%
+            
             document.getElementById('progressText').textContent = progress + '%';
             document.getElementById('progressBarFill').style.width = progress + '%';
         }
@@ -857,10 +863,11 @@
                             checkbox.type = 'checkbox';
                             checkbox.className = 'lesson-checkbox';
                             const lessonDisplayName = currentMedium === 'Telugu' ? (lesson.nameTelugu || lesson.name) : lesson.name;
+                            const uniqueLessonId = `${chapterTitle} - ${lessonDisplayName}`;
                             
                             // Check if this lesson was previously completed
-                            checkbox.checked = completedLessons.includes(lessonDisplayName);
-                            checkbox.onchange = () => toggleLessonCheckbox(checkbox, lessonDisplayName);
+                            checkbox.checked = completedLessons.includes(uniqueLessonId);
+                            checkbox.onchange = () => toggleLessonCheckbox(checkbox, uniqueLessonId);
 
                             const lessonInfo = document.createElement('div');
                             lessonInfo.className = 'lesson-info-item';
@@ -892,7 +899,7 @@
                                 playLesson(lessonDiv, lesson, chapter);
                             }
 
-                            allLessons.push(lessonDisplayName);
+                            allLessons.push(uniqueLessonId);
                             chapterContent.appendChild(lessonDiv);
                             lessonCounter++;
                             foundAnyLesson = true;
