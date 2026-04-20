@@ -14,9 +14,8 @@
             -webkit-tap-highlight-color: transparent;
         }
         html, body {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
         body {
             font-family: 'Roboto', sans-serif;
@@ -97,24 +96,48 @@
             box-shadow: 0 0 0 2px rgba(164, 53, 240, 0.1);
         }
         .nav-progress {
-            display: none;
+            display: flex; /* Always visible now */
             align-items: center;
-            gap: 6px;
-            font-size: 11px;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
             color: #29303b;
             flex-shrink: 0;
         }
-        .progress-bar-tiny {
-            width: 30px;
-            height: 3px;
+        .progress-bar-nav {
+            width: 80px;
+            height: 6px;
             background: #e7e9ec;
-            border-radius: 2px;
+            border-radius: 3px;
             overflow: hidden;
         }
-        .progress-bar-tiny-fill {
+        .progress-bar-nav-fill {
             height: 100%;
             background: #a435f0;
             transition: width 0.3s;
+        }
+
+        /* ===== TOAST ===== */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #a435f0;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(164,53,240,0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+        }
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
 
         /* ===== MAIN CONTAINER ===== */
@@ -344,6 +367,10 @@
 
         /* ===== DESKTOP LAYOUT ===== */
         @media (min-width: 768px) {
+            body {
+                height: 100vh;
+                overflow: hidden;
+            }
             .navbar-top {
                 padding: 10px 20px;
                 height: 60px; /* Taller on desktop */
@@ -475,11 +502,14 @@
         </div>
         <div class="nav-progress">
             <span id="progressText">0%</span>
-            <div class="progress-bar-tiny">
-                <div class="progress-bar-tiny-fill" id="progressBarFill" style="width: 0%"></div>
+            <div class="progress-bar-nav">
+                <div class="progress-bar-nav-fill" id="progressBarFill" style="width: 0%"></div>
             </div>
         </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast-notification"></div>
 
     <!-- Main Container -->
     <div class="main-container">
@@ -517,6 +547,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
         let currentClass = '';
         let courseData = [];
@@ -524,6 +555,7 @@
         let currentMedium = 'English';
         let allLessons = [];
         let completedLessons = [];
+        let phrases = ["Great job!", "Keep going!", "Awesome!", "You rock!"];
 
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -652,12 +684,37 @@
 
         function toggleLessonCheckbox(checkbox, lessonName) {
             if (checkbox.checked) {
-                if (!completedLessons.includes(lessonName)) completedLessons.push(lessonName);
+                if (!completedLessons.includes(lessonName)) {
+                    completedLessons.push(lessonName);
+                    
+                    // Throw confetti
+                    if (typeof confetti === 'function') {
+                        confetti({
+                            particleCount: 100,
+                            spread: 70,
+                            origin: { y: 0.6 },
+                            colors: ['#a435f0', '#ffffff', '#5624d0']
+                        });
+                    }
+                    
+                    // Show encouragement
+                    showEncouragement();
+                }
             } else {
                 completedLessons = completedLessons.filter(l => l !== lessonName);
             }
             updateProgress();
             saveProgress(); // Save to localStorage whenever progress changes
+        }
+
+        function showEncouragement() {
+            const toast = document.getElementById('toastNotification');
+            const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+            toast.textContent = phrase;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
 
         function populateSubjectDropdown() {
@@ -710,6 +767,16 @@
             document.getElementById('classNameDisplay').textContent = `Class ${currentClass}`;
 
             try {
+                // Try to load phrases first
+                try {
+                    const phraseRes = await fetch('./config/phrases.json');
+                    if (phraseRes.ok) {
+                        phrases = await phraseRes.json();
+                    }
+                } catch(e) { 
+                    console.log('Using default phrases'); 
+                }
+
                 const response = await fetch(`./config/class${currentClass}.json`);
                 if (!response.ok) throw new Error('Failed to load class ' + currentClass + ' config');
                 
