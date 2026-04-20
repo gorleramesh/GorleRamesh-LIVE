@@ -16,13 +16,26 @@
             "description": "Foundational Mathematics for Class 6 covering numbers, fractions, geometry and more.",
             "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D",
             "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "Foundational Mathematics for Class 6 covering numbers, fractions, geometry and more.",
+            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D",
+            "type": "video"
           }
         ],
-        "resources": [{
+        "resources": [
+          {
             "name": "Problem Set",
             "link": "Chapter7PS EM.html",
             "type": "html"
-          }]
+          },
+          {
+            "name": "Sample pdf",
+            "link": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf",
+            "type": "pdf"
+          }
+        ]
       },
       {
         "chapter": "Fractions and Decimals",
@@ -50,7 +63,7 @@
       }
     ]
   },
-   {
+  {
     "class": "6",
     "subject": "Mathematics",
     "medium": "Telugu",
@@ -69,11 +82,13 @@
             "type": "video"
           }
         ],
-        "resources": [{
+        "resources": [
+          {
             "name": "Problem Set",
             "link": "Chapter7PS EM.html",
             "type": "html"
-          }]
+          }
+        ]
       },
       {
         "chapter": "Fractions and Decimals",
