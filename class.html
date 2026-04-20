@@ -2,10 +2,711 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Course Content</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fa;
+            color: #29303b;
+        }
+        /* Mobile-first navbar */
+        .navbar-top {
+            background: white;
+            border-bottom: 1px solid #e7e9ec;
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            flex-shrink: 0;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+        .nav-back {
+            background: none;
+            border: none;
+            color: #a435f0;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            height: 30px;
+        }
+        .nav-class-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #29303b;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-right {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .selector-dropdown {
+            padding: 6px 8px;
+            border: 1px solid #e7e9ec;
+            border-radius: 4px;
+            font-size: 11px;
+            background: white;
+            cursor: pointer;
+            height: 32px;
+            min-width: 70px;
+            text-align: center;
+        }
+        .selector-dropdown:focus {
+            outline: none;
+            border-color: #a435f0;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 50px);
+            overflow: hidden;
+        }
+        .main-content {
+            flex: 1;
+            background: #000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .video-player {
+            width: 100%;
+            background: #000;
+            aspect-ratio: 16 / 9;
+            flex-shrink: 0;
+        }
+        .video-player iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none;
+        }
+        .lesson-info {
+            background: white;
+            padding: 12px;
+            flex-shrink: 0;
+            border-bottom: 1px solid #e7e9ec;
+        }
+        .lesson-info h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #29303b;
+            margin-bottom: 4px;
+        }
+        .lesson-description {
+            font-size: 13px;
+            color: #6a6f73;
+            line-height: 1.4;
+        }
+        .resources-section {
+            background: white;
+            padding: 12px;
+            border-bottom: 1px solid #e7e9ec;
+            flex-shrink: 0;
+        }
+        .resources-section h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #29303b;
+            margin-bottom: 8px;
+        }
+        .resource-tabs {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+        }
+        .resource-tabs::-webkit-scrollbar {
+            height: 2px;
+        }
+        .resource-tabs::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+        .resource-tabs::-webkit-scrollbar-thumb {
+            background: #a435f0;
+            border-radius: 2px;
+        }
+        .resource-tab {
+            padding: 6px 10px;
+            border: 1px solid #e7e9ec;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 11px;
+            color: #6a6f73;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .resource-tab:active,
+        .resource-tab.active {
+            border-color: #a435f0;
+            color: #a435f0;
+            background: #f3e5ff;
+        }
+        .resource-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .resource-item {
+            padding: 8px;
+            background: #f7f9fa;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .resource-item:active {
+            background: #ebe5f5;
+        }
+        .resource-name {
+            font-weight: 500;
+            color: #29303b;
+            font-size: 12px;
+        }
+        .resource-btn {
+            background: #a435f0;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .resource-btn:active {
+            background: #8710d8;
+        }
+        .sidebar {
+            width: 100%;
+            background: white;
+            border-top: 1px solid #e7e9ec;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            flex: 0 0 auto;
+            max-height: 40vh;
+        }
+        .sidebar-header {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e7e9ec;
+            background: #f7f9fa;
+            font-weight: 600;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        .sidebar-content {
+            overflow-y: auto;
+            flex: 1;
+        }
+        .chapter-section {
+            border-bottom: 1px solid #e7e9ec;
+        }
+        .chapter-header {
+            padding: 8px 10px;
+            background: #f7f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #29303b;
+            border: none;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        .chapter-header:active {
+            background: #f0f0f0;
+        }
+        .chapter-header .toggle-icon {
+            transition: transform 0.2s;
+            font-size: 12px;
+        }
+        .chapter-header.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .chapter-content {
+            display: none;
+            padding: 0;
+        }
+        .chapter-content.show {
+            display: block;
+        }
+        .lesson {
+            padding: 8px 10px;
+            border-bottom: 1px solid #e7e9ec;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+            font-size: 12px;
+        }
+        .lesson:active {
+            background: #f7f9fa;
+        }
+        .lesson.active {
+            background: #f3e5ff;
+            border-left: 3px solid #a435f0;
+            padding-left: 10px;
+        }
+        .lesson-checkbox {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .lesson-info-item {
+            flex: 1;
+        }
+        .lesson-name {
+            font-weight: 500;
+            color: #29303b;
+            font-size: 12px;
+        }
+        .lesson-duration {
+            font-size: 11px;
+            color: #6a6f73;
+        }
+        .lesson-icon {
+            color: #a435f0;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .progress-section {
+            background: white;
+            padding: 8px 12px;
+            border-bottom: 1px solid #e7e9ec;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #29303b;
+            flex-shrink: 0;
+        }
+        .progress-bar-small {
+            width: 50px;
+            height: 4px;
+            background: #e7e9ec;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: #a435f0;
+            transition: width 0.3s;
+        }
+        @media (min-width: 768px) {
+            .navbar-top {
+                padding: 10px 20px;
+            }
+            .main-container {
+                flex-direction: row;
+                height: calc(100vh - 50px);
+            }
+            .main-content {
+                flex: 1;
+                flex-direction: row;
+                overflow: hidden;
+            }
+            .video-player {
+                aspect-ratio: auto;
+                height: auto;
+                flex: 1;
+            }
+            .video-player iframe {
+                height: 500px !important;
+            }
+            .lesson-info {
+                padding: 20px;
+            }
+            .lesson-info h2 {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+            .lesson-description {
+                font-size: 14px;
+            }
+            .resources-section {
+                padding: 20px;
+            }
+            .sidebar {
+                width: 320px;
+                max-height: none;
+                border-top: none;
+                border-left: 1px solid #e7e9ec;
+            }
+            .selector-dropdown {
+                min-width: 100px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+        .hidden-on-mobile {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .hidden-on-mobile {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar-top">
+        <div class="nav-left">
+            <button class="nav-back" onclick="window.location.href='landing.html';" title="Back">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="nav-class-name" id="classNameDisplay">Class 6</div>
+        </div>
+        <div class="nav-right">
+            <select id="subjectSelector" class="selector-dropdown">
+                <option value="">Subject</option>
+            </select>
+            <select id="mediumSelector" class="selector-dropdown">
+                <option value="">Medium</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="main-content">
+            <!-- Progress -->
+            <div class="progress-section hidden-on-mobile">
+                <span id="progressText">0%</span>
+                <div class="progress-bar-small">
+                    <div class="progress-bar-fill" id="progressBarFill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Video Player -->
+            <div class="video-player">
+                <iframe id="main-video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- Lesson Info -->
+            <div class="lesson-info">
+                <h2 id="lessonTitle">Select a lesson</h2>
+                <p class="lesson-description" id="lessonDescription">Choose a lesson from the list</p>
+            </div>
+
+            <!-- Resources -->
+            <div class="resources-section" id="resourcesSection" style="display: none;">
+                <h3>Resources</h3>
+                <div class="resource-tabs" id="resourceTabs"></div>
+                <div class="resource-list" id="resourceList"></div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-book"></i> Chapters & Lessons
+            </div>
+            <div class="sidebar-content" id="sidebar-content">
+                <p style="padding: 12px; color: #6a6f73; font-size: 12px;">Select a subject</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let currentClass = '';
+        let courseData = [];
+        let currentSubject = null;
+        let currentMedium = 'English';
+        let allLessons = [];
+        let completedLessons = [];
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function updateURLParams(subject, medium) {
+            const classNum = getQueryParam('class') || '6';
+            const newUrl = `class.html?class=${classNum}&subject=${encodeURIComponent(subject)}&medium=${encodeURIComponent(medium)}`;
+            window.history.replaceState({}, '', newUrl);
+        }
+
+        function updateProgress() {
+            const totalLessons = allLessons.length;
+            const progress = totalLessons > 0 ? Math.round((completedLessons.length / totalLessons) * 100) : 0;
+            document.getElementById('progressText').textContent = progress + '%';
+            document.getElementById('progressBarFill').style.width = progress + '%';
+        }
+
+        function playLesson(lessonElement, lessonData) {
+            if (lessonData.videoUrl) {
+                document.getElementById('main-video').src = lessonData.videoUrl;
+            }
+            
+            const lessonName = currentMedium === 'Telugu' ? (lessonData.nameTelugu || lessonData.name) : lessonData.name;
+            document.getElementById('lessonTitle').textContent = lessonName;
+            document.getElementById('lessonDescription').textContent = lessonData.description || 'No description';
+            
+            document.querySelectorAll('.lesson').forEach(lesson => lesson.classList.remove('active'));
+            if (lessonElement) lessonElement.classList.add('active');
+
+            updateResourcesPanel(lessonData);
+        }
+
+        function updateResourcesPanel(lessonData) {
+            const resourcesSection = document.getElementById('resourcesSection');
+            const resourceTabs = document.getElementById('resourceTabs');
+            const resourceList = document.getElementById('resourceList');
+            
+            resourceTabs.innerHTML = '';
+            resourceList.innerHTML = '';
+
+            let hasResources = false;
+            const resourceTypes = [];
+
+            if (lessonData.resources) {
+                if (lessonData.resources.pdf?.length) { resourceTypes.push('pdf'); hasResources = true; }
+                if (lessonData.resources.html?.length) { resourceTypes.push('html'); hasResources = true; }
+                if (lessonData.resources.video?.length) { resourceTypes.push('video'); hasResources = true; }
+            }
+
+            if (!hasResources) {
+                resourcesSection.style.display = 'none';
+                return;
+            }
+
+            resourcesSection.style.display = 'block';
+
+            resourceTypes.forEach((type, index) => {
+                const tab = document.createElement('button');
+                tab.className = `resource-tab ${index === 0 ? 'active' : ''}`;
+                tab.textContent = type.toUpperCase();
+                tab.onclick = () => {
+                    document.querySelectorAll('.resource-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    displayResourcesOfType(type, lessonData);
+                };
+                resourceTabs.appendChild(tab);
+            });
+
+            if (resourceTypes.length > 0) {
+                displayResourcesOfType(resourceTypes[0], lessonData);
+            }
+        }
+
+        function displayResourcesOfType(type, lessonData) {
+            const resourceList = document.getElementById('resourceList');
+            resourceList.innerHTML = '';
+            const resources = lessonData.resources[type] || [];
+
+            if (resources.length === 0) {
+                resourceList.innerHTML = '<p style="color: #6a6f73; padding: 8px; font-size: 12px;">No resources</p>';
+                return;
+            }
+
+            resources.forEach((resource, index) => {
+                const iconMap = { pdf: 'fa-file-pdf', html: 'fa-globe', video: 'fa-video' };
+                const labelMap = { pdf: 'PDF', html: 'Open', video: 'Video' };
+                
+                const item = document.createElement('div');
+                item.className = 'resource-item';
+                item.innerHTML = `
+                    <div class="resource-name"><i class="fas ${iconMap[type]}" style="margin-right: 6px;"></i>Resource ${index + 1}</div>
+                    <a href="${resource}" target="_blank" class="resource-btn">${labelMap[type]}</a>
+                `;
+                resourceList.appendChild(item);
+            });
+        }
+
+        function toggleChapter(button) {
+            const chapter = button.closest('.chapter-section');
+            const content = chapter.querySelector('.chapter-content');
+            content.classList.toggle('show');
+            button.classList.toggle('collapsed');
+        }
+
+        function toggleLessonCheckbox(checkbox, lessonName) {
+            if (checkbox.checked) {
+                if (!completedLessons.includes(lessonName)) completedLessons.push(lessonName);
+            } else {
+                completedLessons = completedLessons.filter(l => l !== lessonName);
+            }
+            updateProgress();
+        }
+
+        async function loadContent() {
+            currentClass = getQueryParam('class') || '6';
+            const initialSubject = getQueryParam('subject');
+            const initialMedium = getQueryParam('medium') || 'English';
+            
+            currentMedium = initialMedium;
+            document.getElementById('classNameDisplay').textContent = `Class ${currentClass}`;
+
+            try {
+                const response = await fetch(`./config/class${currentClass}.json`);
+                if (!response.ok) throw new Error('Failed to load');
+                
+                courseData = await response.json();
+                
+                const subjectSelector = document.getElementById('subjectSelector');
+                subjectSelector.innerHTML = '<option value="">Select Subject</option>';
+                courseData.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.subject;
+                    option.textContent = item.subject;
+                    subjectSelector.appendChild(option);
+                });
+
+                const mediumSelector = document.getElementById('mediumSelector');
+                mediumSelector.innerHTML = '<option value="">Select Medium</option>';
+                if (courseData.length > 0 && courseData[0].mediums) {
+                    courseData[0].mediums.forEach(medium => {
+                        const option = document.createElement('option');
+                        option.value = medium;
+                        option.textContent = medium;
+                        mediumSelector.appendChild(option);
+                    });
+                }
+
+                if (initialSubject) {
+                    subjectSelector.value = initialSubject;
+                    loadSubject(initialSubject);
+                }
+
+                subjectSelector.addEventListener('change', (e) => {
+                    if (e.target.value) {
+                        loadSubject(e.target.value);
+                        updateURLParams(e.target.value, currentMedium);
+                    }
+                });
+
+                mediumSelector.addEventListener('change', (e) => {
+                    currentMedium = e.target.value || 'English';
+                    if (currentSubject) {
+                        loadSubject(currentSubject);
+                        updateURLParams(currentSubject, currentMedium);
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function loadSubject(subjectName) {
+            currentSubject = subjectName;
+            const subject = courseData.find(s => s.subject === subjectName);
+            if (!subject) return;
+
+            const sidebarContent = document.getElementById('sidebar-content');
+            sidebarContent.innerHTML = '';
+            allLessons = [];
+            let lessonCounter = 0;
+
+            if (subject.chapters?.length) {
+                subject.chapters.forEach((chapter) => {
+                    const chapterSection = document.createElement('div');
+                    chapterSection.className = 'chapter-section';
+
+                    const chapterHeader = document.createElement('button');
+                    chapterHeader.className = 'chapter-header';
+                    chapterHeader.onclick = toggleChapter;
+                    const chapterTitle = currentMedium === 'Telugu' ? (chapter.chapterTitleTelugu || chapter.chapterTitle) : chapter.chapterTitle;
+                    chapterHeader.innerHTML = `<span>${chapterTitle}</span><i class="fas fa-chevron-down toggle-icon"></i>`;
+
+                    const chapterContent = document.createElement('div');
+                    chapterContent.className = 'chapter-content show';
+
+                    if (chapter.lessons?.length) {
+                        chapter.lessons.forEach((lesson, lessonIndex) => {
+                            const lessonDiv = document.createElement('div');
+                            lessonDiv.className = 'lesson' + (lessonCounter === 0 ? ' active' : '');
+
+                            const checkbox = document.createElement('input');
+                            checkbox.type = 'checkbox';
+                            checkbox.className = 'lesson-checkbox';
+                            const lessonDisplayName = currentMedium === 'Telugu' ? (lesson.nameTelugu || lesson.name) : lesson.name;
+                            checkbox.onchange = () => toggleLessonCheckbox(checkbox, lessonDisplayName);
+
+                            const lessonInfo = document.createElement('div');
+                            lessonInfo.className = 'lesson-info-item';
+                            lessonInfo.style.cursor = 'pointer';
+                            lessonInfo.onclick = (e) => {
+                                if (e.target !== checkbox) playLesson(lessonDiv, lesson);
+                            };
+
+                            const lessonName = document.createElement('div');
+                            lessonName.className = 'lesson-name';
+                            lessonName.textContent = `${lessonIndex + 1}. ${lessonDisplayName}`;
+
+                            const lessonDuration = document.createElement('div');
+                            lessonDuration.className = 'lesson-duration';
+                            lessonDuration.textContent = lesson.duration || '10 min';
+
+                            lessonInfo.appendChild(lessonName);
+                            lessonInfo.appendChild(lessonDuration);
+
+                            const lessonIcon = document.createElement('div');
+                            lessonIcon.className = 'lesson-icon';
+                            lessonIcon.innerHTML = '<i class="fas fa-play-circle"></i>';
+
+                            lessonDiv.appendChild(checkbox);
+                            lessonDiv.appendChild(lessonInfo);
+                            lessonDiv.appendChild(lessonIcon);
+
+                            if (lessonCounter === 0) playLesson(lessonDiv, lesson);
+
+                            allLessons.push(lessonDisplayName);
+                            chapterContent.appendChild(lessonDiv);
+                            lessonCounter++;
+                        });
+                    }
+
+                    chapterSection.appendChild(chapterHeader);
+                    chapterSection.appendChild(chapterContent);
+                    sidebarContent.appendChild(chapterSection);
+                });
+            }
+
+            updateProgress();
+        }
+
+        loadContent();
+    </script>
+</body>
+</html>
     <style>
         * {
             margin: 0;

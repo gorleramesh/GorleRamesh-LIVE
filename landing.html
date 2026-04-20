@@ -2,10 +2,389 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gorle Ramesh - Educational Platform</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fa;
+            color: #29303b;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            padding: 10px 16px;
+            border-bottom: 1px solid #e7e9ec;
+        }
+        .navbar-brand {
+            color: #29303b !important;
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .navbar-brand i {
+            font-size: 24px;
+            color: #a435f0;
+        }
+        .navbar-nav {
+            display: none;
+        }
+        .hero {
+            background: linear-gradient(135deg, #5624d0 0%, #a91e84 100%);
+            color: white;
+            padding: 40px 16px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .hero p {
+            font-size: 14px;
+            margin-bottom: 0;
+            opacity: 0.95;
+        }
+        .classes-section {
+            padding: 24px 0;
+            background: #f7f9fa;
+        }
+        .section-title {
+            text-align: center;
+            padding: 0 16px;
+            margin-bottom: 24px;
+        }
+        .section-title h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #29303b;
+            margin-bottom: 6px;
+        }
+        .section-title p {
+            font-size: 13px;
+            color: #6a6f73;
+        }
+        .class-header {
+            background: white;
+            padding: 14px 16px;
+            margin: 0 16px 16px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .class-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #29303b;
+            margin-bottom: 2px;
+        }
+        .class-header p {
+            color: #6a6f73;
+            font-size: 12px;
+            margin: 0;
+        }
+        .subjects-container {
+            padding: 0 12px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .subject-card {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: all 0.2s;
+            border: 1px solid #e7e9ec;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .subject-card:active {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+        .subject-card-header {
+            background: linear-gradient(135deg, #5624d0 0%, #a91e84 100%);
+            padding: 16px;
+            color: white;
+            text-align: center;
+        }
+        .subject-icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        .subject-card-header h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .subject-card-body {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .subject-description {
+            color: #6a6f73;
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            flex: 1;
+        }
+        .subject-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e7e9ec;
+            font-size: 11px;
+        }
+        .meta-badge {
+            color: #6a6f73;
+            flex: 1;
+            text-align: center;
+        }
+        .meta-badge strong {
+            color: #29303b;
+            font-weight: 600;
+        }
+        .btn-explore {
+            background-color: #a435f0;
+            border-color: #a435f0;
+            border-radius: 4px;
+            font-weight: 600;
+            padding: 10px 16px;
+            color: white;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .btn-explore:active {
+            background-color: #8710d8;
+            border-color: #8710d8;
+            color: white;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #1c1d1f;
+            color: #6a6f73;
+            padding: 24px 16px;
+            text-align: center;
+            font-size: 12px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (min-width: 576px) {
+            .hero {
+                padding: 50px 20px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .section-title {
+                padding: 0;
+                margin-bottom: 30px;
+            }
+            .section-title h2 {
+                font-size: 28px;
+            }
+            .classes-section {
+                padding: 40px 20px;
+            }
+            .subjects-container {
+                padding: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .subject-card {
+                flex: 0 0 calc(50% - 8px);
+            }
+            @media (min-width: 992px) {
+                .subject-card {
+                    flex: 0 0 calc(33.333% - 11px);
+                }
+            }
+            .navbar {
+                padding: 12px 20px;
+            }
+            .navbar-nav {
+                display: flex !important;
+                margin-left: auto;
+            }
+            .navbar-nav .nav-link {
+                color: #29303b !important;
+                font-weight: 500;
+                font-size: 14px;
+                margin-left: 24px;
+            }
+            .navbar-nav .nav-link:hover {
+                color: #a435f0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="landing.html">
+            <i class="fas fa-graduation-cap"></i> Gorle Ramesh
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Learn From Home</h1>
+        <p>All Classes • All Subjects • Multiple Languages</p>
+    </div>
+
+    <!-- Classes Section -->
+    <div class="classes-section">
+        <div class="container-fluid">
+            <div class="section-title">
+                <h2>Choose Your Class</h2>
+                <p>Select and start learning today</p>
+            </div>
+
+            <div id="classesContainer"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Gorle Ramesh Educational Platform</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        async function loadClasses() {
+            const container = document.getElementById('classesContainer');
+            
+            try {
+                const classes = ['6', '7', '8', '9', '10'];
+                const classData = {};
+
+                for (const classNum of classes) {
+                    try {
+                        const response = await fetch(`./config/class${classNum}.json`);
+                        if (response.ok) {
+                            classData[classNum] = await response.json();
+                        }
+                    } catch (e) {
+                        console.warn(`Could not load class${classNum}.json`);
+                    }
+                }
+
+                classes.forEach(classNum => {
+                    const data = classData[classNum];
+                    if (!data || data.length === 0) return;
+
+                    const classSection = document.createElement('div');
+                    classSection.className = 'mb-4';
+
+                    const classHeader = document.createElement('div');
+                    classHeader.className = 'class-header';
+                    classHeader.innerHTML = `
+                        <h3>Class ${classNum}</h3>
+                        <p>Choose a subject to explore</p>
+                    `;
+                    classSection.appendChild(classHeader);
+
+                    const subjectsContainer = document.createElement('div');
+                    subjectsContainer.className = 'subjects-container';
+
+                    data.forEach(subject => {
+                        const subjectIcon = getIconForSubject(subject.subject);
+                        const courseOverview = subject.courseOverview || {};
+
+                        const card = document.createElement('a');
+                        card.href = `class.html?class=${classNum}&subject=${encodeURIComponent(subject.subject)}&medium=English`;
+                        card.className = 'subject-card';
+                        card.style.textDecoration = 'none';
+                        card.innerHTML = `
+                            <div class="subject-card-header">
+                                <div class="subject-icon">
+                                    <i class="fas ${subjectIcon}"></i>
+                                </div>
+                                <h5>${subject.subject}</h5>
+                            </div>
+                            <div class="subject-card-body">
+                                <p class="subject-description">
+                                    ${courseOverview.description ? courseOverview.description.substring(0, 60) + '...' : 'Explore this course'}
+                                </p>
+                                <div class="subject-meta">
+                                    <div class="meta-badge">
+                                        <i class="fas fa-clock"></i> ${courseOverview.duration || '-'}
+                                    </div>
+                                    <div class="meta-badge">
+                                        <i class="fas fa-book"></i> ${subject.chapters ? subject.chapters.length : 0} Ch
+                                    </div>
+                                </div>
+                                <div class="btn-explore">Start Learning →</div>
+                            </div>
+                        `;
+
+                        subjectsContainer.appendChild(card);
+                    });
+
+                    classSection.appendChild(subjectsContainer);
+                    container.appendChild(classSection);
+                });
+
+            } catch (error) {
+                console.error('Error loading classes:', error);
+                container.innerHTML = '<p style="color: #dc3545; text-align: center;">Error loading courses</p>';
+            }
+        }
+
+        function getIconForSubject(subject) {
+            const subjectMap = {
+                'Mathematics': 'fa-calculator',
+                'Science': 'fa-flask',
+                'English': 'fa-book',
+                'Hindi': 'fa-scroll',
+                'Social Studies': 'fa-globe',
+                'Computer': 'fa-laptop'
+            };
+            return subjectMap[subject] || 'fa-graduation-cap';
+        }
+
+        loadClasses();
+    </script>
+</body>
+</html>
     <style>
         * {
             margin: 0;
