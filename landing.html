@@ -5,12 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gorle Ramesh - Educational Platform</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f7f9fa;
             color: #29303b;
+        }
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            padding: 12px 20px;
+            border-bottom: 1px solid #e7e9ec;
+        }
+        .navbar-brand {
+            color: #29303b !important;
+            font-weight: 700;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar-brand i {
+            font-size: 26px;
+            color: #a435f0;
+        }
+        .navbar-nav .nav-link {
+            color: #29303b !important;
+            font-weight: 500;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #a435f0 !important;
         }
         .hero {
             background: linear-gradient(135deg, #5624d0 0%, #a91e84 100%);
@@ -26,151 +58,306 @@
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 0;
+            opacity: 0.95;
         }
-        .class-card {
+        .classes-section {
+            padding: 60px 0;
+            background: #f7f9fa;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #29303b;
+            margin-bottom: 10px;
+        }
+        .section-title p {
+            font-size: 16px;
+            color: #6a6f73;
+        }
+        .class-header {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .class-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #29303b;
+            margin-bottom: 5px;
+        }
+        .class-header p {
+            color: #6a6f73;
+            font-size: 14px;
+        }
+        .subject-card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border: 1px solid #e7e9ec;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
-        .class-card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-            transform: translateY(-2px);
+        .subject-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
         }
-        .class-card .card-body {
-            padding: 24px;
+        .subject-card-header {
+            background: linear-gradient(135deg, #5624d0 0%, #a91e84 100%);
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
         }
-        .class-card .card-title {
-            font-size: 1.5rem;
+        .subject-card-header .subject-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+        .subject-card-header h5 {
+            font-size: 20px;
             font-weight: 600;
-            color: #29303b;
-            margin-bottom: 8px;
+            margin: 0;
         }
-        .class-card .card-text {
+        .subject-card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .subject-description {
             color: #6a6f73;
-            margin-bottom: 16px;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex: 1;
         }
-        .btn-primary {
+        .subject-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e7e9ec;
+        }
+        .meta-badge {
+            font-size: 12px;
+            color: #6a6f73;
+        }
+        .meta-badge strong {
+            color: #29303b;
+        }
+        .btn-explore {
             background-color: #a435f0;
             border-color: #a435f0;
             border-radius: 4px;
             font-weight: 600;
             padding: 12px 24px;
+            color: white;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: 100%;
         }
-        .btn-primary:hover {
+        .btn-explore:hover {
             background-color: #8710d8;
             border-color: #8710d8;
-        }
-        .navbar {
-            background-color: white !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .navbar-brand {
-            color: #29303b !important;
-            font-weight: 700;
-        }
-        .navbar-nav .nav-link {
-            color: #29303b !important;
-            font-weight: 500;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #a435f0 !important;
+            color: white;
+            text-decoration: none;
+            transform: scale(1.02);
         }
         footer {
             background-color: #1c1d1f;
             color: #6a6f73;
             padding: 40px 0;
+            text-align: center;
         }
         footer p {
             margin: 0;
         }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6a6f73;
+        }
+        .loading-spinner {
+            border: 4px solid #f3e5ff;
+            border-top: 4px solid #a435f0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="landing.html">
-            <img src="images/logo.png" alt="Logo"> Gorle Ramesh
+            <i class="fas fa-graduation-cap"></i> Gorle Ramesh
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a class="nav-link" href="landing.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <div class="hero">
         <div class="container">
             <h1>Welcome to Gorle Ramesh Educational Platform</h1>
-            <p class="lead">Explore comprehensive educational content for classes 6-10</p>
+            <p>Comprehensive educational content for Classes 6-10 in Multiple Subjects</p>
         </div>
     </div>
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Select Your Class</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card class-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Class 6</h5>
-                        <p class="card-text">Mathematics and Science content</p>
-                        <a href="class.html?class=6" class="btn btn-primary">Explore Class 6</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card class-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Class 7</h5>
-                        <p class="card-text">Mathematics and Science content</p>
-                        <a href="class.html?class=7" class="btn btn-primary">Explore Class 7</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card class-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Class 8</h5>
-                        <p class="card-text">Mathematics and Science content</p>
-                        <a href="class.html?class=8" class="btn btn-primary">Explore Class 8</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card class-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Class 9</h5>
-                        <p class="card-text">Mathematics and Science content</p>
-                        <a href="class.html?class=9" class="btn btn-primary">Explore Class 9</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card class-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Class 10</h5>
-                        <p class="card-text">Mathematics and Science content</p>
-                        <a href="class.html?class=10" class="btn btn-primary">Explore Class 10</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-dark text-white text-center py-4 mt-5">
+    <!-- Classes Section -->
+    <div class="classes-section">
         <div class="container">
-            <p>&copy; 2026 Gorle Ramesh. All rights reserved.</p>
+            <div class="section-title">
+                <h2>Select Your Class</h2>
+                <p>Choose a class to explore subjects and start learning</p>
+            </div>
+
+            <div id="classesContainer"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Gorle Ramesh Educational Platform. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        async function loadClasses() {
+            const container = document.getElementById('classesContainer');
+            
+            try {
+                // Load all class files
+                const classes = ['6', '7', '8', '9', '10'];
+                const classData = {};
+
+                for (const classNum of classes) {
+                    try {
+                        const response = await fetch(`./config/class${classNum}.json`);
+                        if (response.ok) {
+                            classData[classNum] = await response.json();
+                        }
+                    } catch (e) {
+                        console.warn(`Could not load class${classNum}.json`);
+                    }
+                }
+
+                // Render classes
+                classes.forEach(classNum => {
+                    const data = classData[classNum];
+                    if (!data || data.length === 0) return;
+
+                    const classSection = document.createElement('div');
+                    classSection.className = 'mb-5';
+
+                    const classHeader = document.createElement('div');
+                    classHeader.className = 'class-header';
+                    classHeader.innerHTML = `
+                        <h3>Class ${classNum}</h3>
+                        <p>Select a subject to explore courses and lessons</p>
+                    `;
+                    classSection.appendChild(classHeader);
+
+                    const row = document.createElement('div');
+                    row.className = 'row';
+
+                    data.forEach(subject => {
+                        const col = document.createElement('div');
+                        col.className = 'col-md-6 col-lg-4 mb-4';
+
+                        const subjectIcon = getIconForSubject(subject.subject);
+                        const courseOverview = subject.courseOverview || {};
+
+                        const card = document.createElement('div');
+                        card.className = 'subject-card';
+                        card.innerHTML = `
+                            <div class="subject-card-header">
+                                <div class="subject-icon">
+                                    <i class="fas ${subjectIcon}"></i>
+                                </div>
+                                <h5>${subject.subject}</h5>
+                            </div>
+                            <div class="subject-card-body">
+                                <p class="subject-description">
+                                    ${courseOverview.description || 'Explore comprehensive course content'}
+                                </p>
+                                <div class="subject-meta">
+                                    <div class="meta-badge">
+                                        <i class="fas fa-clock"></i> <strong>${courseOverview.duration || 'N/A'}</strong>
+                                    </div>
+                                    <div class="meta-badge">
+                                        <i class="fas fa-book"></i> <strong>${subject.chapters ? subject.chapters.length : 0}</strong> Chapters
+                                    </div>
+                                </div>
+                                <a href="class.html?class=${classNum}&subject=${encodeURIComponent(subject.subject)}&medium=English" class="btn-explore">
+                                    Explore Course <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        `;
+
+                        col.appendChild(card);
+                        row.appendChild(col);
+                    });
+
+                    classSection.appendChild(row);
+                    container.appendChild(classSection);
+                });
+
+            } catch (error) {
+                console.error('Error loading classes:', error);
+                container.innerHTML = '<p class="text-danger">Error loading course data. Please try again later.</p>';
+            }
+        }
+
+        function getIconForSubject(subject) {
+            const subjectMap = {
+                'Mathematics': 'fa-calculator',
+                'Science': 'fa-flask',
+                'English': 'fa-book',
+                'Hindi': 'fa-scroll',
+                'Social Studies': 'fa-globe',
+                'Computer': 'fa-laptop'
+            };
+            return subjectMap[subject] || 'fa-graduation-cap';
+        }
+
+        // Load classes on page load
+        loadClasses();
+    </script>
 </body>
 </html>

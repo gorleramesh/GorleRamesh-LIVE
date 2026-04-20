@@ -1,53 +1,140 @@
 [
   {
     "class": "6",
-    "subject": "6th Maths English mediun \n AP & Telangana",
-    "medium": "English",
-    "chapterwisedetails": [
+    "subject": "Mathematics",
+    "courseOverview": {
+      "title": "Class 6 Mathematics",
+      "description": "Comprehensive Mathematics course for Class 6 students covering fundamental concepts including geometry, arithmetic, and algebra.",
+      "duration": "12 hours",
+      "level": "Beginner",
+      "rating": 4.8,
+      "students": 1200,
+      "instructor": "Gorle Ramesh"
+    },
+    "mediums": ["English", "Telugu"],
+    "chapters": [
       {
-        "chapter": "Chapter 1",
-        "topic": "Geometry          ..               జ్యామితి",
-        "priority": 1,
-        "subtopics": [
+        "chapterId": 1,
+        "chapterTitle": "Geometry",
+        "chapterTitleTelugu": "జ్యామితి",
+        "description": "Learn the fundamentals of geometry including points, lines, angles, and shapes.",
+        "duration": "1.5 hours",
+        "lessons": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D"
+            "lessonId": 1,
+            "name": "Introduction to Geometry",
+            "nameTelugu": "జ్యామితికి పరిచయం",
+            "description": "Basic concepts of geometry and its importance",
+            "duration": "15 min",
+            "videoUrl": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D"]
+            }
           },
           {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "lessonId": 2,
+            "name": "Points and Lines",
+            "nameTelugu": "బిందువులు మరియు రేఖలు",
+            "description": "Understanding points, lines, and line segments",
+            "duration": "12 min",
+            "videoUrl": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"]
+            }
           },
           {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ"
+            "lessonId": 3,
+            "name": "Angles",
+            "nameTelugu": "కోణాలు",
+            "description": "Types of angles and angle measurement",
+            "duration": "14 min",
+            "videoUrl": "https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ"]
+            }
           },
           {
-            "name": "Video 4",
-            "description": "",
-            "link": "https://www.youtube.com/embed/c7bBz6iAPV4?si=GFpbil_H4_T8XQYm"
+            "lessonId": 4,
+            "name": "Triangles",
+            "nameTelugu": "త్రిభుజాలు",
+            "description": "Classification and properties of triangles",
+            "duration": "16 min",
+            "videoUrl": "https://www.youtube.com/embed/c7bBz6iAPV4?si=GFpbil_H4_T8XQYm",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/c7bBz6iAPV4?si=GFpbil_H4_T8XQYm"]
+            }
           },
           {
-            "name": "Video 5",
-            "description": "",
-            "link": "https://www.youtube.com/embed/yqFvN5Oexmw?si=SWlD_HpzqtLVkocn"
+            "lessonId": 5,
+            "name": "Quadrilaterals",
+            "nameTelugu": "చతుర్భుజాలు",
+            "description": "Types and properties of quadrilaterals",
+            "duration": "18 min",
+            "videoUrl": "https://www.youtube.com/embed/yqFvN5Oexmw?si=SWlD_HpzqtLVkocn",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/yqFvN5Oexmw?si=SWlD_HpzqtLVkocn"]
+            }
           },
           {
-            "name": "Video 6",
-            "description": "",
-            "link": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=BlVKTdRupno93ErT"
+            "lessonId": 6,
+            "name": "Circles",
+            "nameTelugu": "వృత్తాలు",
+            "description": "Circle properties and terminology",
+            "duration": "13 min",
+            "videoUrl": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=BlVKTdRupno93ErT",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/ILBjUb4xQ5U?si=BlVKTdRupno93ErT"]
+            }
           },
           {
-            "name": "Video 7",
-            "description": "",
-            "link": "https://www.youtube.com/embed/ruvE6HUJM-s?si=tvpo7acnY66xJMvh"
+            "lessonId": 7,
+            "name": "Perimeter and Area",
+            "nameTelugu": "చుట్టుకొలత మరియు వైశాల్యం",
+            "description": "Calculating perimeter and area of different shapes",
+            "duration": "17 min",
+            "videoUrl": "https://www.youtube.com/embed/ruvE6HUJM-s?si=tvpo7acnY66xJMvh",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/ruvE6HUJM-s?si=tvpo7acnY66xJMvh"]
+            }
           },
           {
-            "name": "Video 8",
-            "description": "",
-            "link": "https://www.youtube.com/embed/2D7f0mB9nGA?si=i8lAyNOk9OilBjEe"
+            "lessonId": 8,
+            "name": "Surface Area and Volume",
+            "nameTelugu": "ఉపరితల వైశాల్యం మరియు ఘనపరిమాణం",
+            "description": "Surface area and volume of 3D shapes",
+            "duration": "20 min",
+            "videoUrl": "https://www.youtube.com/embed/2D7f0mB9nGA?si=i8lAyNOk9OilBjEe",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/2D7f0mB9nGA?si=i8lAyNOk9OilBjEe"]
+            }
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set",
+            "type": "html",
+            "url": "Chapter6Mat Em.html"
+          },
+          {
+            "name": "NCERT Solutions",
+            "type": "pdf",
+            "url": "pdf/class6_math_geometry.pdf"
           }
         ]
       }
@@ -55,212 +142,167 @@
   },
   {
     "class": "6",
-    "subject": "6th Maths Telugu mediun \n AP & Telangana",
-    "medium": "English",
-    "chapterwisedetails": [
+    "subject": "Science",
+    "courseOverview": {
+      "title": "Class 6 Science",
+      "description": "Explore the fascinating world of science with interactive lessons covering physics, chemistry, and biology.",
+      "duration": "14 hours",
+      "level": "Beginner",
+      "rating": 4.7,
+      "students": 1500,
+      "instructor": "Gorle Ramesh"
+    },
+    "mediums": ["English", "Telugu"],
+    "chapters": [
       {
-        "chapter": "Chapter 1",
-        "topic": "జ్యామితి",
-        "priority": 1,
-        "subtopics": [
+        "chapterId": 1,
+        "chapterTitle": "Changes Around Us",
+        "chapterTitleTelugu": "మన చుట్టూ జరిగే మార్పులు",
+        "description": "Understanding physical and chemical changes in everyday life.",
+        "duration": "1.2 hours",
+        "lessons": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=YgxffOE27NBaMFWh"
+            "lessonId": 1,
+            "name": "Physical Changes",
+            "nameTelugu": "భౌతిక మార్పులు",
+            "description": "Understanding reversible and irreversible physical changes",
+            "duration": "10 min",
+            "videoUrl": "https://www.youtube.com/embed/Ui4mfletZ3s?si=2AFcKrP_Xtund7h3",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/Ui4mfletZ3s?si=2AFcKrP_Xtund7h3"]
+            }
           },
           {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/c7bBz6iAPV4?si=re4v1BbpbtoB0PMn"
-          },
-          {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=k3a23_7mOZJ-Q8DS"
+            "lessonId": 2,
+            "name": "Chemical Changes",
+            "nameTelugu": "రసాయన మార్పులు",
+            "description": "Identifying chemical changes and their characteristics",
+            "duration": "12 min",
+            "videoUrl": "https://www.youtube.com/embed/7aGFIwShxts?si=lw2myAS389maqDym",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/7aGFIwShxts?si=lw2myAS389maqDym"]
+            }
           }
-        ]
-      }
-    ]
-  },
-  {
-    "class": "6",
-    "subject": "6th Science English mediun \nAP & Telangana",
-    "medium": "English",
-    "chapterwisedetails": [
-      {
-        "chapter": "Chapter 1",
-        "topic": "Changes Around Us..మన చుట్టూ జరిగే మార్పులు",
-        "priority": 1,
-        "subtopics": [
+        ],
+        "resources": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=2AFcKrP_Xtund7h3"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/7aGFIwShxts?si=lw2myAS389maqDym"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 2",
-        "topic": "Simple Electric Circuits..సాధారణ విద్యుత్ వలయాలు",
-        "priority": 2,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=9XAz6BszsO3Da6Rb"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=flOWnCarPxmAGrIB"
+            "name": "Experiment Guide",
+            "type": "html",
+            "url": "Chapter6Sci EM.html"
           }
         ]
       },
       {
-        "chapter": "Chapter 3",
-        "topic": "Light, Shadows and Images..కాంతి - నీడలు - ప్రతిబింబాలు",
-        "priority": 3,
-        "subtopics": [
+        "chapterId": 2,
+        "chapterTitle": "Simple Electric Circuits",
+        "chapterTitleTelugu": "సాధారణ విద్యుత్ వలయాలు",
+        "description": "Learn the basics of electricity and simple electrical circuits.",
+        "duration": "1.5 hours",
+        "lessons": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=oTvuAzXKtaKZHUPT"
+            "lessonId": 1,
+            "name": "Electric Current",
+            "nameTelugu": "విద్యుత్ ప్రవాహం",
+            "description": "Fundamentals of electric current and circuits",
+            "duration": "15 min",
+            "videoUrl": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=9XAz6BszsO3Da6Rb",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/nmcD0MfM6Lk?si=9XAz6BszsO3Da6Rb"]
+            }
           },
           {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=zowpdPas6ipbwbrv"
-          },
-          {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/Tddwg4uwyX0?si=ygPxhaYYMju4-XKT"
-          },
-          {
-            "name": "Video 4",
-            "description": "",
-            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=NX2tniY9J_UmPS3_"
+            "lessonId": 2,
+            "name": "Circuit Components",
+            "nameTelugu": "సర్క్యూట్ భాగాలు",
+            "description": "Understanding different circuit components",
+            "duration": "14 min",
+            "videoUrl": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=flOWnCarPxmAGrIB",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/nmcD0MfM6Lk?si=flOWnCarPxmAGrIB"]
+            }
           }
-        ]
-      }
-    ]
-  },
-  {
-    "class": "6",
-    "subject": "6th Science Telugu mediun \nAP & Telangana",
-    "medium": "English",
-    "chapterwisedetails": [
-      {
-        "chapter": "Chapter 1",
-        "topic": "మన చుట్టూ జరిగే మార్పులు",
-        "priority": 1,
-        "subtopics": [
+        ],
+        "resources": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/7aGFIwShxts?si=lw2myAS389maqDym"
+            "name": "Lab Worksheet",
+            "type": "pdf",
+            "url": "pdf/class6_science_circuits.pdf"
           }
         ]
       },
       {
-        "chapter": "Chapter 2",
-        "topic": "సాధారణ విద్యుత్ వలయాలు",
-        "priority": 2,
-        "subtopics": [
+        "chapterId": 3,
+        "chapterTitle": "Light, Shadows and Images",
+        "chapterTitleTelugu": "కాంతి - నీడలు - ప్రతిబింబాలు",
+        "description": "Exploring the behavior of light and its properties.",
+        "duration": "1.8 hours",
+        "lessons": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=flOWnCarPxmAGrIB"
+            "lessonId": 1,
+            "name": "Light and Vision",
+            "nameTelugu": "కాంతి మరియు దృష్టి",
+            "description": "How light enables us to see",
+            "duration": "11 min",
+            "videoUrl": "https://www.youtube.com/embed/tdJOeWoKow8?si=oTvuAzXKtaKZHUPT",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/tdJOeWoKow8?si=oTvuAzXKtaKZHUPT"]
+            }
+          },
+          {
+            "lessonId": 2,
+            "name": "Shadows",
+            "nameTelugu": "నీడలు",
+            "description": "Formation and properties of shadows",
+            "duration": "10 min",
+            "videoUrl": "https://www.youtube.com/embed/G_MR4vRER8c?si=zowpdPas6ipbwbrv",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/G_MR4vRER8c?si=zowpdPas6ipbwbrv"]
+            }
+          },
+          {
+            "lessonId": 3,
+            "name": "Plane Mirrors",
+            "nameTelugu": "సమతల దర్పణాలు",
+            "description": "Properties of images formed in plane mirrors",
+            "duration": "13 min",
+            "videoUrl": "https://www.youtube.com/embed/Tddwg4uwyX0?si=ygPxhaYYMju4-XKT",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/Tddwg4uwyX0?si=ygPxhaYYMju4-XKT"]
+            }
+          },
+          {
+            "lessonId": 4,
+            "name": "Curved Mirrors",
+            "nameTelugu": "వక్ర దర్పణాలు",
+            "description": "Curved mirrors and their applications",
+            "duration": "12 min",
+            "videoUrl": "https://www.youtube.com/embed/GdtJzmyLPKY?si=NX2tniY9J_UmPS3_",
+            "resources": {
+              "pdf": [],
+              "html": [],
+              "video": ["https://www.youtube.com/embed/GdtJzmyLPKY?si=NX2tniY9J_UmPS3_"]
+            }
           }
-        ]
-      },
-      {
-        "chapter": "Chapter 3",
-        "topic": "కాంతి - నీడలు - ప్రతిబింబాలు",
-        "priority": 3,
-        "subtopics": [
+        ],
+        "resources": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=zowpdPas6ipbwbrv"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=NX2tniY9J_UmPS3_"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "class": "6",
-    "subject": "6th NCERT",
-    "medium": "English",
-    "chapterwisedetails": [
-      {
-        "chapter": "Chapter 1",
-        "topic": "Light, Shadows and Reflections",
-        "priority": 1,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=crvumOGWS9iP6ltx"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/xZ-QmJwOiEM?si=58Cs0wCs5cQ2y6l2"
-          },
-          {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/Y9AtuZg9SWM?si=8IJonjv0A4xeDygY"
-          },
-          {
-            "name": "Video 4",
-            "description": "",
-            "link": "https://www.youtube.com/embed/WZ8Fcm1k0Z8?si=ElROIvWWQv9oXR6q"
-          },
-          {
-            "name": "Video 5",
-            "description": "",
-            "link": "https://www.youtube.com/embed/FbyVsn2HgYs?si=kJgKWqbLbHntbtbV"
-          },
-          {
-            "name": "Video 6",
-            "description": "",
-            "link": "https://www.youtube.com/embed/BxXfp7z2stk?si=hJpQJNfc_-SSvXN1"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 2",
-        "topic": "Electricity and Circuits",
-        "priority": 2,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=Rh_4AcqO3tjaB7zA"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 3",
-        "topic": "Air around us",
-        "priority": 3,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=xNZUvVzC6y6eidfj"
+            "name": "Experiment Guide",
+            "type": "html",
+            "url": "Chapter6Sci EM.html"
           }
         ]
       }

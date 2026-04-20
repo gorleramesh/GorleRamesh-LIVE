@@ -1,1 +1,324 @@
-[]
+[
+  {
+    "class": "8",
+    "subject": "Science",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "1. Force and Pressure",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Gcju-Q3Y2-M?si=lDN63W687zZnem09",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/VgoX6k2uhu0?si=gGsBOIfD5QeH6fVn",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Duo1acMw-vs?si=eOgD_iAJmBwyrozh",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "2. Friction",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/q99EcbOxyfk?si=bbVCNz4aAVPvNaTD",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "3. Coal and Petrolium",
+        "subtopics": [],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "4. Synthetic Fibres and Plastics",
+        "subtopics": [],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "5. Sound",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/0XD33LckJTA?si=ZBua3q7dEtMLXj0-",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "6. Materials: Metals and Non-metals",
+        "subtopics": [],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "7. Light",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=uooe-XJTKT7WQaEe",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=iUUdzNriUAJTU8dT",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Tddwg4uwyX0?si=dm8LvHncTEZ0sYHn",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=9aTWdJEBGGJdRh9l",
+            "type": "video"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/poQlc4I12vU?si=kyux5e4oQqfowqq8",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "8. Chemical effects of Electric Current",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/HkVqC3IlYmc?si=65WXXnX1ab2tfvqm",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "9. Some Natural Phenomena",
+        "subtopics": [],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "10. Combustion and Flame",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=fkMFRYzoX2RlECjG",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/7aGFIwShxts?si=Sh1wCgpAjn-TMfEE",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "11. Stars and the Solar System",
+        "subtopics": [],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter8PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter8PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter8PS TM.html",
+            "type": "html"
+          }
+        ]
+      }
+    ]
+  }
+]

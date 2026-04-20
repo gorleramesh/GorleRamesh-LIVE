@@ -1,1 +1,350 @@
-[]
+[
+  {
+    "class": "9",
+    "subject": "Science",
+    "medium": "English",
+    "chapterwisedetails": [
+      {
+        "chapter": "1. Matter in our Surroundings",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/hAfX7oKCmMs?si=IQe1T619ReWckG1b",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/XlK5bDdXkQ4?si=_XgojXZA3k51atvc",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/ylbID45Jztk?si=vFApH_TqzYwjqyUq",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/8u_GJoKX6KM?si=smJvKCYvQIQmR3-j",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "2. Is matter around us pure",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/7gU0kAIWD44?si=oW14bxUchsz4mE0Z",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/oZ_JxGwTmDc?si=LbBezGeURLOLIOUF",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "3. Atoms and Molecules",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/y8wPC-KXGdA?si=eFMECeeQmHck1JLS",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/RY-xc-aa_os?si=WNL8ILz-df2HOpIG",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/C98Oty4KBzQ?si=1kyW4hAtBJyxux1-",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/iF-ef8-XbZI?si=hObvKVCqYEjS9kfY",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "4. Structure of the Atom",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/9derBKbmz_8?si=bSUC3RDygXQQdU93",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "5. Motion",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/7_eCmPkZRdM?si=QPTqJsHzsKhuadJx",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/P8EzB_y5a0E?si=6fdxdy5z-mTBm1_u",
+            "type": "video"
+          },
+          {
+            "name": "Video 3",
+            "description": "",
+            "link": "https://www.youtube.com/embed/ekoaualk7Ug?si=l0jOiJABp1J2yRfl",
+            "type": "video"
+          },
+          {
+            "name": "Video 4",
+            "description": "",
+            "link": "https://www.youtube.com/embed/ecBCJGNiHRk?si=ZgM1o_nWUKJmFFVI",
+            "type": "video"
+          },
+          {
+            "name": "Video 5",
+            "description": "",
+            "link": "https://www.youtube.com/embed/_FU206FKndQ?si=LV2MnFAieMMCjXg3",
+            "type": "video"
+          },
+          {
+            "name": "Video 6",
+            "description": "",
+            "link": "https://www.youtube.com/embed/QQczPu4t6VM?si=jAZrcgKWM-caIUqD",
+            "type": "video"
+          },
+          {
+            "name": "Video 7",
+            "description": "",
+            "link": "https://www.youtube.com/embed/BUqbKSCuYwE?si=voZ-GL8_DNpswGjv",
+            "type": "video"
+          },
+          {
+            "name": "Video 8",
+            "description": "",
+            "link": "https://www.youtube.com/embed/yXXL3NpsVWI?si=6MLigkdlL2BVebZc",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "6. Force and Laws of Motion",
+        "subtopics": [],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "7. Gravitation",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/gJq4D6YKivo?si=m1xN3D0T0tdcp5aM",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Keu9U7khrdY?si=kdI8onChKb3Ev_M8",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "8. Work and Energy",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/KFD3deLr07s?si=X46S_R8iOiDzL-dh",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "",
+            "link": "https://www.youtube.com/embed/ROvqiNO7xYo?si=3c97L8tRLTTQxLkG",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "9. Sound",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Ap4jPwaYSu0?si=ik63P4qWLJk2tjeP",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set NCERT",
+            "link": "Chapter9PS NCERT.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set EM",
+            "link": "Chapter9PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Problem Set TM",
+            "link": "Chapter9PS TM.html",
+            "type": "html"
+          }
+        ]
+      }
+    ]
+  }
+]

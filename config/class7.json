@@ -1,53 +1,66 @@
 [
   {
     "class": "7",
-    "subject": "7th Maths English mediun \n AP & Telangana",
+    "subject": "Mathematics",
     "medium": "English",
     "chapterwisedetails": [
       {
-        "chapter": "Chapter 1",
-        "topic": "Geometry ..జ్యామితి",
-        "priority": 1,
+        "chapter": "Geometry ..జ్యామితి",
         "subtopics": [
           {
             "name": "Video 1",
             "description": "",
-            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D"
+            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D",
+            "type": "video"
           },
           {
             "name": "Video 2",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
           },
           {
             "name": "Video 3",
             "description": "",
-            "link": "https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ"
+            "link": "https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ",
+            "type": "video"
           },
           {
             "name": "Video 4",
             "description": "",
-            "link": "https://www.youtube.com/embed/c7bBz6iAPV4?si=GFpbil_H4_T8XQYm"
+            "link": "https://www.youtube.com/embed/c7bBz6iAPV4?si=GFpbil_H4_T8XQYm",
+            "type": "video"
           },
           {
             "name": "Video 5",
             "description": "",
-            "link": "https://www.youtube.com/embed/yqFvN5Oexmw?si=SWlD_HpzqtLVkocn"
+            "link": "https://www.youtube.com/embed/yqFvN5Oexmw?si=SWlD_HpzqtLVkocn",
+            "type": "video"
           },
           {
             "name": "Video 6",
             "description": "",
-            "link": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=BlVKTdRupno93ErT"
+            "link": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=BlVKTdRupno93ErT",
+            "type": "video"
           },
           {
             "name": "Video 7",
             "description": "",
-            "link": "https://www.youtube.com/embed/ruvE6HUJM-s?si=tvpo7acnY66xJMvh"
+            "link": "https://www.youtube.com/embed/ruvE6HUJM-s?si=tvpo7acnY66xJMvh",
+            "type": "video"
           },
           {
             "name": "Video 8",
             "description": "",
-            "link": "https://www.youtube.com/embed/2D7f0mB9nGA?si=i8lAyNOk9OilBjEe"
+            "link": "https://www.youtube.com/embed/2D7f0mB9nGA?si=i8lAyNOk9OilBjEe",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set",
+            "link": "Chapter7PS EM.html",
+            "type": "html"
           }
         ]
       }
@@ -55,353 +68,162 @@
   },
   {
     "class": "7",
-    "subject": "7th Maths Telugu mediun \n AP & Telangana",
+    "subject": "Science",
     "medium": "English",
     "chapterwisedetails": [
       {
-        "chapter": "Chapter 1",
-        "topic": "Geometry",
-        "priority": 1,
+        "chapter": "Acids - Bases",
         "subtopics": [
           {
             "name": "Video 1",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/BxW0fqP6hig?si=Z46yZOpP7RLj2Fmi",
+            "type": "video"
           },
           {
             "name": "Video 2",
             "description": "",
-            "link": "https://www.youtube.com/embed/c7bBz6iAPV4?si=GFpbil_H4_T8XQYm"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
           },
           {
             "name": "Video 3",
             "description": "",
-            "link": "https://www.youtube.com/embed/ILBjUb4xQ5U?si=BlVKTdRupno93ErT"
+            "link": "https://www.youtube.com/embed/3I1Cs--FmEg?si=MGr69gXCaxl-uffA",
+            "type": "video"
           },
           {
             "name": "Video 4",
             "description": "",
-            "link": "https://www.youtube.com/embed/2D7f0mB9nGA?si=i8lAyNOk9OilBjEe"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "class": "7",
-    "subject": "7th Science English mediun \nAP & Telangana",
-    "medium": "English",
-    "chapterwisedetails": [
-      {
-        "chapter": "Chapter 1",
-        "topic": "Acids - Bases",
-        "priority": 1,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/BxW0fqP6hig?si=Z46yZOpP7RLj2Fmi"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
-          },
-          {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/3I1Cs--FmEg?si=MGr69gXCaxl-uffA"
-          },
-          {
-            "name": "Video 4",
-            "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
           },
           {
             "name": "Video 5",
             "description": "",
-            "link": "https://www.youtube.com/embed/7nLee21Y0O8?si=qlPqsIk2M2P3h6op"
+            "link": "https://www.youtube.com/embed/7nLee21Y0O8?si=qlPqsIk2M2P3h6op",
+            "type": "video"
           },
           {
             "name": "Video 6",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
           },
           {
             "name": "Video 7",
             "description": "",
-            "link": "https://www.youtube.com/embed/XKYBq1pklJ0?si=g1VT4VeVWMKOPeYf"
+            "link": "https://www.youtube.com/embed/XKYBq1pklJ0?si=g1VT4VeVWMKOPeYf",
+            "type": "video"
           },
           {
             "name": "Video 8",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set",
+            "link": "Chapter7PS EM.html",
+            "type": "html"
           }
         ]
       },
       {
-        "chapter": "Chapter 2",
-        "topic": "Current Electricity - Results",
-        "priority": 2,
+        "chapter": "Current Electricity - Results",
         "subtopics": [
           {
             "name": "Video 1",
             "description": "",
-            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=xTDJv0xuN0RxRaLp"
+            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=xTDJv0xuN0RxRaLp",
+            "type": "video"
           },
           {
             "name": "Video 2",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set",
+            "link": "Chapter7PS EM.html",
+            "type": "html"
           }
         ]
       },
       {
-        "chapter": "Chapter 3",
-        "topic": "Reflection of Light",
-        "priority": 3,
+        "chapter": "Reflection of Light",
         "subtopics": [
           {
             "name": "Video 1",
             "description": "",
-            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=0ygS6uMec8brbLmc"
+            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=0ygS6uMec8brbLmc",
+            "type": "video"
           },
           {
             "name": "Video 2",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
           },
           {
             "name": "Video 3",
             "description": "",
-            "link": "https://www.youtube.com/embed/Tddwg4uwyX0?si=ruS1wx6riOIP02nP"
+            "link": "https://www.youtube.com/embed/Tddwg4uwyX0?si=ruS1wx6riOIP02nP",
+            "type": "video"
           },
           {
             "name": "Video 4",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
           },
           {
             "name": "Video 5",
             "description": "",
-            "link": "https://www.youtube.com/embed/xZ-QmJwOiEM?si=58Cs0wCs5cQ2y6l2"
+            "link": "https://www.youtube.com/embed/xZ-QmJwOiEM?si=58Cs0wCs5cQ2y6l2",
+            "type": "video"
           },
           {
             "name": "Video 6",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set",
+            "link": "Chapter7PS EM.html",
+            "type": "html"
           }
         ]
       },
       {
-        "chapter": "Chapter 4",
-        "topic": "Changes around us",
-        "priority": 4,
+        "chapter": "Changes around us",
         "subtopics": [
           {
             "name": "Video 1",
             "description": "",
-            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=_J4KKBr4YQxO4Dmc"
+            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=_J4KKBr4YQxO4Dmc",
+            "type": "video"
           },
           {
             "name": "Video 2",
             "description": "",
-            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr"
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
           }
-        ]
-      }
-    ]
-  },
-  {
-    "class": "7",
-    "subject": "7th Science Telugu mediun \nAP & Telangana",
-    "medium": "English",
-    "chapterwisedetails": [
-      {
-        "chapter": "Chapter 1",
-        "topic": "ఆమ్లాలు - క్షారాలు",
-        "priority": 1,
-        "subtopics": [
+        ],
+        "resources": [
           {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/q2_NVgeOthk?si=EmDB2m8Nl0zrg_cW"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/KfwIsdgqBcY?si=kEfe8kqUFcfoMzdT"
-          },
-          {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/eqBRIGh7urc?si=u4CyguFzRa_E7C8h"
-          },
-          {
-            "name": "Video 4",
-            "description": "",
-            "link": "https://www.youtube.com/embed/QTFsEiGCa2s?si=L20VM0XI6P0Yk3as"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 2",
-        "topic": "ప్రవాహ విద్యుత్ - ఫలితాలు",
-        "priority": 2,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=2Tf-GBsgS3jHlwER"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 3",
-        "topic": "కాంతి పరావర్తనం",
-        "priority": 3,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=iiVGANgSbCLBElNe"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=BUZs-HqhukMKCZzE"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 4",
-        "topic": "మన చుట్టూ ఏర్పడు మార్పులు",
-        "priority": 4,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/7aGFIwShxts?si=e6FPTMFyho7mV3hP"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "class": "7",
-    "subject": "7th NCERT",
-    "medium": "English",
-    "chapterwisedetails": [
-      {
-        "chapter": "Chapter 1",
-        "topic": "3. Acids, Bases and Salts",
-        "priority": 1,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/BxW0fqP6hig?si=FOH4uGT-GjXBzC_T"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/q2_NVgeOthk?si=Ia_xQDXvWKkVFw9y"
-          },
-          {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/3I1Cs--FmEg?si=igRLtugrICMZSpmy"
-          },
-          {
-            "name": "Video 4",
-            "description": "",
-            "link": "https://www.youtube.com/embed/KfwIsdgqBcY?si=-R8WeD7VDWZ_zXfK"
-          },
-          {
-            "name": "Video 5",
-            "description": "",
-            "link": "https://www.youtube.com/embed/7nLee21Y0O8?si=WpCAYqRhxI9qC_lc"
-          },
-          {
-            "name": "Video 6",
-            "description": "",
-            "link": "https://www.youtube.com/embed/eqBRIGh7urc?si=d1STTFFtCXENDDft"
-          },
-          {
-            "name": "Video 7",
-            "description": "",
-            "link": "https://www.youtube.com/embed/XKYBq1pklJ0?si=GL2MMGeQG69Yrufk"
-          },
-          {
-            "name": "Video 8",
-            "description": "",
-            "link": "https://www.youtube.com/embed/QTFsEiGCa2s?si=23bt1Ib3ml0Xr_7w"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 2",
-        "topic": "6. Motion and Time",
-        "priority": 2,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/ekoaualk7Ug?si=2YqR-ur5npPfsAsJ"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/ecBCJGNiHRk?si=VoSke7z4asKftpdh"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 3",
-        "topic": "7. Electric Current and it's Effects",
-        "priority": 3,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/nmcD0MfM6Lk?si=rTzuFRdX6d-17eCy"
-          }
-        ]
-      },
-      {
-        "chapter": "Chapter 4",
-        "topic": "8. Light",
-        "priority": 4,
-        "subtopics": [
-          {
-            "name": "Video 1",
-            "description": "",
-            "link": "https://www.youtube.com/embed/tdJOeWoKow8?si=tyQnxIAAl69KmZCY"
-          },
-          {
-            "name": "Video 2",
-            "description": "",
-            "link": "https://www.youtube.com/embed/G_MR4vRER8c?si=Qj_OGskZV57t3SFY"
-          },
-          {
-            "name": "Video 3",
-            "description": "",
-            "link": "https://www.youtube.com/embed/Tddwg4uwyX0?si=cPP24VqoTAEuGpgo"
-          },
-          {
-            "name": "Video 4",
-            "description": "",
-            "link": "https://www.youtube.com/embed/GdtJzmyLPKY?si=FB6pu755UUxdwtB9"
-          },
-          {
-            "name": "Video 5",
-            "description": "",
-            "link": "https://www.youtube.com/embed/poQlc4I12vU?si=yidrOR6hpfDNyd3h"
-          },
-          {
-            "name": "Video 6",
-            "description": "",
-            "link": "https://www.youtube.com/embed/YLTuog9V1IY?si=BZgdFC-WOKve1lWt"
+            "name": "Problem Set",
+            "link": "Chapter7PS EM.html",
+            "type": "html"
           }
         ]
       }
