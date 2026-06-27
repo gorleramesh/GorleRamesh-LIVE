@@ -1208,6 +1208,11 @@
             // Support both 'chapterwisedetails' (current JSON format) and legacy 'chapters' format
             const chapters = subject.chapterwisedetails || subject.chapters || [];
 
+            let lessonToPlayDiv = null;
+            let lessonToPlayData = null;
+            let lessonToPlayChapter = null;
+            const initialLessonName = getQueryParam('lesson');
+
             if (chapters.length > 0) {
                 chapters.forEach((chapter) => {
                     const chapterSection = document.createElement('div');
@@ -1236,13 +1241,15 @@
                             // In JSON, type is "video". Sometimes missing, we assume video if link exists.
                             if (lesson.type && lesson.type !== 'video') return;
 
+                            const lessonDisplayName = currentMedium === 'Telugu' ? (lesson.nameTelugu || lesson.name) : lesson.name;
+                            const isTarget = initialLessonName ? (lessonDisplayName === initialLessonName) : (lessonCounter === 0);
+
                             const lessonDiv = document.createElement('div');
-                            lessonDiv.className = 'lesson' + (lessonCounter === 0 ? ' active' : '');
+                            lessonDiv.className = 'lesson';
 
                             const checkbox = document.createElement('input');
                             checkbox.type = 'checkbox';
                             checkbox.className = 'lesson-checkbox';
-                            const lessonDisplayName = currentMedium === 'Telugu' ? (lesson.nameTelugu || lesson.name) : lesson.name;
                             const uniqueLessonId = `${chapterTitle} - ${lessonDisplayName}`;
                             
                             // Check if this lesson was previously completed
@@ -1275,8 +1282,14 @@
                             lessonDiv.appendChild(lessonInfo);
                             lessonDiv.appendChild(lessonIcon);
 
-                            if (lessonCounter === 0) {
-                                playLesson(lessonDiv, lesson, chapter);
+                            if (isTarget) {
+                                lessonToPlayDiv = lessonDiv;
+                                lessonToPlayData = lesson;
+                                lessonToPlayChapter = chapter;
+                            } else if (lessonCounter === 0 && !lessonToPlayDiv) {
+                                lessonToPlayDiv = lessonDiv;
+                                lessonToPlayData = lesson;
+                                lessonToPlayChapter = chapter;
                             }
 
                             allLessons.push(uniqueLessonId);
@@ -1309,6 +1322,12 @@
                         sidebarContent.appendChild(chapterSection);
                     }
                 });
+            }
+
+            // Play the selected lesson (or first lesson fallback)
+            if (lessonToPlayDiv && lessonToPlayData) {
+                lessonToPlayDiv.classList.add('active');
+                playLesson(lessonToPlayDiv, lessonToPlayData, lessonToPlayChapter);
             }
 
             if (!foundAnyLesson) {

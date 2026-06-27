@@ -142,15 +142,14 @@
             border-color: var(--icon-color);
         }
         .hero {
-            background: var(--hero-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--hero-border);
-            border-radius: 16px;
-            margin: 24px 16px;
-            padding: 48px 24px;
+            background: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border: none;
+            margin: 8px 16px 24px;
+            padding: 24px 0 12px;
             text-align: center;
-            box-shadow: var(--hero-shadow);
+            box-shadow: none;
         }
         .hero-illustration {
             max-width: 250px;
@@ -369,8 +368,8 @@
         }
         @media (min-width: 576px) {
             .hero {
-                padding: 60px 20px;
-                margin: 32px auto;
+                padding: 40px 0 20px;
+                margin: 8px auto 20px;
                 max-width: 900px;
             }
             .hero-illustration {
@@ -445,6 +444,142 @@
             box-shadow: 0 4px 16px rgba(255, 0, 0, 0.12);
             text-decoration: none;
         }
+
+        /* ===== SEARCH BAR ===== */
+        .search-section {
+            padding: 0 16px;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 10;
+        }
+        .search-box-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            padding: 8px 20px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+        .search-container:focus-within {
+            border-color: var(--icon-color);
+            box-shadow: var(--card-shadow-hover);
+        }
+        .search-icon {
+            color: var(--text-meta);
+            margin-right: 12px;
+            font-size: 16px;
+        }
+        #globalSearchInput {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+            width: 100%;
+        }
+        #globalSearchInput::placeholder {
+            color: var(--text-meta);
+        }
+        .search-clear-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-meta);
+            cursor: pointer;
+            padding: 2px;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-clear-btn:hover {
+            color: var(--text-main);
+        }
+        .search-results {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-height: 380px;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 8px 0;
+        }
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        .search-result-item:hover {
+            background: rgba(168, 85, 247, 0.08);
+            text-decoration: none;
+            color: var(--text-main);
+            padding-left: 24px;
+        }
+        .result-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(168, 85, 247, 0.12);
+            color: var(--icon-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .result-details {
+            flex: 1;
+            min-width: 0;
+        }
+        .result-title {
+            font-weight: 600;
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .result-breadcrumbs {
+            font-size: 11px;
+            color: var(--text-meta);
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .result-badge {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            background: rgba(168, 85, 247, 0.12);
+            color: var(--icon-color);
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body>
@@ -457,6 +592,22 @@
             <i id="themeIcon" class="fas fa-moon"></i>
         </button>
     </nav>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="container-fluid">
+            <div class="search-box-wrapper">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="globalSearchInput" placeholder="Search for subjects, chapters, or video lessons..." oninput="handleSearch(this.value)">
+                    <button id="searchClearBtn" class="search-clear-btn" onclick="clearSearch()" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <div class="hero">
@@ -538,6 +689,8 @@
             });
         })();
 
+        let allClassData = {};
+
         async function loadClasses() {
             const container = document.getElementById('classesContainer');
             
@@ -555,6 +708,8 @@
                         console.warn(`Could not load class${classNum}.json`);
                     }
                 }
+
+                allClassData = classData; // Save globally for search
 
                 classes.forEach(classNum => {
                     const data = classData[classNum];
@@ -653,6 +808,132 @@
                 });
             }
         }
+
+        function handleSearch(query) {
+            const resultsPanel = document.getElementById('searchResults');
+            const clearBtn = document.getElementById('searchClearBtn');
+            
+            if (!query || query.trim().length < 2) {
+                resultsPanel.style.display = 'none';
+                clearBtn.style.display = 'none';
+                return;
+            }
+            
+            clearBtn.style.display = 'block';
+            const searchTerm = query.toLowerCase().trim();
+            const matches = [];
+            
+            for (const classNum in allClassData) {
+                const subjects = allClassData[classNum];
+                if (!Array.isArray(subjects)) continue;
+                
+                subjects.forEach(subject => {
+                    const subjectName = subject.subject || '';
+                    const medium = subject.medium || 'English';
+                    const chapters = subject.chapterwisedetails || subject.chapters || [];
+                    
+                    if (subjectName.toLowerCase().includes(searchTerm)) {
+                        matches.push({
+                            type: 'subject',
+                            title: subjectName,
+                            breadcrumbs: `Class ${classNum} • ${medium} Medium`,
+                            link: `class.html?class=${classNum}&subject=${encodeURIComponent(subjectName)}&medium=${medium}`,
+                            badge: 'Subject'
+                        });
+                    }
+                    
+                    chapters.forEach(chapter => {
+                        const chapterTitle = chapter.chapterTitle || chapter.chapter || '';
+                        
+                        if (chapterTitle.toLowerCase().includes(searchTerm)) {
+                            matches.push({
+                                type: 'chapter',
+                                title: chapterTitle,
+                                breadcrumbs: `Class ${classNum} • ${subjectName} (${medium})`,
+                                link: `class.html?class=${classNum}&subject=${encodeURIComponent(subjectName)}&medium=${medium}`,
+                                badge: 'Chapter'
+                            });
+                        }
+                        
+                        const subtopics = chapter.subtopics || chapter.lessons || [];
+                        subtopics.forEach(lesson => {
+                            const lessonName = lesson.name || '';
+                            if (lesson.type && lesson.type !== 'video') return;
+                            
+                            if (lessonName.toLowerCase().includes(searchTerm)) {
+                                matches.push({
+                                    type: 'video',
+                                    title: lessonName,
+                                    breadcrumbs: `Class ${classNum} • ${subjectName} > ${chapterTitle.substring(0, 20)}...`,
+                                    link: `class.html?class=${classNum}&subject=${encodeURIComponent(subjectName)}&medium=${medium}&lesson=${encodeURIComponent(lessonName)}`,
+                                    badge: 'Video'
+                                });
+                            }
+                        });
+                    });
+                });
+            }
+            
+            renderSearchResults(matches);
+        }
+        
+        function renderSearchResults(matches) {
+            const resultsPanel = document.getElementById('searchResults');
+            resultsPanel.innerHTML = '';
+            
+            if (matches.length === 0) {
+                resultsPanel.innerHTML = `
+                    <div style="padding: 16px; text-align: center; color: var(--text-muted); font-size: 13px;">
+                        <i class="fas fa-info-circle" style="margin-right: 6px;"></i> No matches found for your search.
+                    </div>
+                `;
+                resultsPanel.style.display = 'block';
+                return;
+            }
+            
+            const limitedMatches = matches.slice(0, 8);
+            
+            limitedMatches.forEach(match => {
+                const item = document.createElement('a');
+                item.href = match.link;
+                item.className = 'search-result-item';
+                
+                const iconMap = {
+                    subject: 'fa-book-open',
+                    chapter: 'fa-folder-open',
+                    video: 'fa-play-circle'
+                };
+                const icon = iconMap[match.type] || 'fa-search';
+                
+                item.innerHTML = `
+                    <div class="result-icon">
+                        <i class="fas ${icon}"></i>
+                    </div>
+                    <div class="result-details">
+                        <div class="result-title">${match.title}</div>
+                        <div class="result-breadcrumbs">${match.breadcrumbs}</div>
+                    </div>
+                    <div class="result-badge">${match.badge}</div>
+                `;
+                resultsPanel.appendChild(item);
+            });
+            
+            resultsPanel.style.display = 'block';
+        }
+        
+        function clearSearch() {
+            document.getElementById('globalSearchInput').value = '';
+            document.getElementById('searchResults').style.display = 'none';
+            document.getElementById('searchClearBtn').style.display = 'none';
+        }
+        
+        document.addEventListener('click', (e) => {
+            const container = document.querySelector('.search-box-wrapper');
+            const resultsPanel = document.getElementById('searchResults');
+            if (container && !container.contains(e.target) && resultsPanel) {
+                resultsPanel.style.display = 'none';
+            }
+        });
 
         loadClasses();
     </script>
