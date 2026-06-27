@@ -1,0 +1,177 @@
+[
+  {
+    "class": "6",
+    "subject": "Mathematics",
+    "medium": "English",
+    "courseOverview": {
+      "description": "Foundational Mathematics for Class 6 covering numbers, fractions, geometry and more.",
+      "duration": "Full Year"
+    },
+    "chapterwisedetails": [
+      {
+        "chapter": "Numbers and Operations",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "Foundational Mathematics for Class 6 covering numbers, fractions, geometry and more.",
+            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D",
+            "type": "video"
+          },
+          {
+            "name": "Video 2",
+            "description": "Foundational Mathematics for Class 6 covering numbers, fractions, geometry and more.",
+            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set",
+            "link": "Chapter7PS EM.html",
+            "type": "html"
+          },
+          {
+            "name": "Sample pdf",
+            "link": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf",
+            "type": "pdf"
+          }
+        ]
+      },
+      {
+        "chapter": "Fractions and Decimals",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
+          }
+        ],
+        "resources": []
+      },
+      {
+        "chapter": "Basic Geometry",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ",
+            "type": "video"
+          }
+        ],
+        "resources": []
+      }
+    ]
+  },
+  {
+    "class": "6",
+    "subject": "Mathematics",
+    "medium": "Telugu",
+    "courseOverview": {
+      "description": "Foundational Mathematics for Class 6 covering numbers, fractions, geometry and more.",
+      "duration": "Full Year"
+    },
+    "chapterwisedetails": [
+      {
+        "chapter": "Numbers and Operations",
+        "subtopics": [
+          {
+            "name": "Maths telugu Video 1",
+            "description": "Foundational Mathematics for Class 6 covering numbers, fractions, geometry and more.",
+            "link": "https://www.youtube.com/embed/XCGoZBj9hdE?si=J6kNRoXnzxLC1X5D",
+            "type": "video"
+          }
+        ],
+        "resources": [
+          {
+            "name": "Problem Set",
+            "link": "Chapter7PS EM.html",
+            "type": "html"
+          }
+        ]
+      },
+      {
+        "chapter": "Fractions and Decimals",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/NkmNWbdevC8?si=e3YLEtIOUPB7-MSr",
+            "type": "video"
+          }
+        ],
+        "resources": []
+      },
+      {
+        "chapter": "Basic Geometry",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/sMaWClLRq80?si=2IOhx5LaVUNXTRWZ",
+            "type": "video"
+          }
+        ],
+        "resources": []
+      }
+    ]
+  },
+  {
+    "class": "6",
+    "subject": "Science",
+    "medium": "Telugu",
+    "courseOverview": {
+      "description": "Explore the wonders of Science for Class 6 including plants, animals, food and materials.",
+      "duration": "Full Year"
+    },
+    "chapterwisedetails": [
+      {
+        "chapter": "Food and Nutrition",
+        "subtopics": [
+          {
+            "name": "Telugu Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/BxW0fqP6hig?si=Z46yZOpP7RLj2Fmi",
+            "type": "video"
+          }
+        ],
+        "resources": []
+      },
+      {
+        "chapter": "Plants Around Us",
+        "subtopics": [
+          {
+            "name": "Video 1",
+            "description": "",
+            "link": "https://www.youtube.com/embed/Ui4mfletZ3s?si=_J4KKBr4YQxO4Dmc",
+            "type": "video"
+          }
+        ],
+        "resources": []
+      }
+    ]
+  },
+  {
+    "class": "7",
+    "subject": "Chemistry",
+    "medium": "English",
+    "courseOverview": {
+      "description": "cgbghgfhgfhfg",
+      "duration": "Full Year"
+    },
+    "chapterwisedetails": [
+      {
+        "chapter": "Atoms",
+        "subtopics": [
+          {
+            "name": "Sub topic",
+            "description": "skufghksfgks",
+            "link": "https://abhiram010.in/browser.html",
+            "type": "video"
+          }
+        ],
+        "resources": []
+      }
+    ]
+  }
+]

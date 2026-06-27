@@ -40,8 +40,7 @@
                     
                     <template v-if="courseData">
                         <input type="text" class="form-control form-control-sm mr-2" v-model="exportFilename" placeholder="filename.json" style="width: 150px;">
-                        <button class="btn btn-warning btn-sm mr-2" @click="downloadJSON"><i class="fas fa-download"></i> Download JSON</button>
-                        <button class="btn btn-danger btn-sm" @click="closeConfig"><i class="fas fa-times"></i> Close / Reset</button>
+                        <button class="btn btn-warning btn-sm" @click="downloadJSON"><i class="fas fa-download"></i> Download JSON</button>
                     </template>
                 </div>
             </div>
@@ -190,24 +189,8 @@
                     courseData: null,
                     exportFilename: 'data.json',
                     isDragging: false,
-                    isDirty: false
+                    dragCounter: 0
                 }
-            },
-            watch: {
-                courseData: {
-                    handler(newVal, oldVal) {
-                        if (newVal !== null && oldVal !== null) {
-                            this.isDirty = true;
-                        }
-                    },
-                    deep: true
-                }
-            },
-            mounted() {
-                window.addEventListener('beforeunload', this.handleBeforeUnload);
-            },
-            beforeUnmount() {
-                window.removeEventListener('beforeunload', this.handleBeforeUnload);
             },
             computed: {
                 formattedJSON() {
@@ -247,7 +230,6 @@
                         try {
                             const json = JSON.parse(e.target.result);
                             this.courseData = Array.isArray(json) ? json : [json];
-                            this.$nextTick(() => { this.isDirty = false; });
                         } catch (err) {
                             alert("Invalid JSON format. Please upload a valid course configuration JSON.");
                         }
@@ -257,7 +239,6 @@
                 startEmpty() {
                     this.courseData = [];
                     this.exportFilename = "class_new.json";
-                    this.$nextTick(() => { this.isDirty = false; });
                 },
                 addSubjectBlock() {
                     if (!this.courseData) this.courseData = [];
@@ -336,24 +317,6 @@
                     
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
-                    
-                    this.isDirty = false;
-                },
-                closeConfig() {
-                    if (this.isDirty) {
-                        if (!confirm('You have unsaved changes! Are you sure you want to discard them?')) {
-                            return;
-                        }
-                    }
-                    this.courseData = null;
-                    this.isDirty = false;
-                    this.exportFilename = 'data.json';
-                },
-                handleBeforeUnload(e) {
-                    if (this.isDirty) {
-                        e.preventDefault();
-                        e.returnValue = '';
-                    }
                 }
             }
         }).mount('#app')

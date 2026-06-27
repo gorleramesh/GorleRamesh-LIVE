@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Config Editor Documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f7f9fa; color: #29303b; padding-top: 40px; padding-bottom: 40px; }
+        .doc-container { max-width: 900px; margin: auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { color: #a435f0; font-weight: 700; margin-bottom: 30px; border-bottom: 2px solid #f0e6fc; padding-bottom: 10px; }
+        h2 { color: #29303b; font-weight: 600; margin-top: 40px; margin-bottom: 15px; }
+        h3 { color: #5624d0; font-size: 1.25rem; margin-top: 25px; }
+        .step-box { background: #fafbfc; border: 1px solid #e7e9ec; padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #a435f0; }
+        .feature-list { list-style-type: none; padding-left: 0; }
+        .feature-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .feature-list li::before { content: '\f00c'; font-family: 'Font Awesome 5 Free'; font-weight: 900; position: absolute; left: 0; color: #28a745; }
+        .nav-links { background: #f0e6fc; padding: 15px; border-radius: 6px; margin-bottom: 30px; }
+        .nav-links a { color: #a435f0; font-weight: 600; margin-right: 15px; text-decoration: none; }
+        .nav-links a:hover { text-decoration: underline; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 4px; color: #856404; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container doc-container">
+        <h1><i class="fas fa-book-open"></i> How to Use the Course Config Editor</h1>
+        
+        <p class="lead">This documentation will teach you how to use the <strong>editor.html</strong> tool to safely add subjects, chapters, videos, and resources to your learning platform without writing any code.</p>
+
+        <div class="nav-links">
+            <a href="#getting-started">1. Getting Started</a>
+            <a href="#adding-subjects">2. Adding Subjects</a>
+            <a href="#chapters-videos">3. Chapters & Videos</a>
+            <a href="#resources">4. Resources</a>
+            <a href="#saving">5. Saving & Exporting</a>
+            <a href="editor.html" class="btn btn-sm btn-primary float-right">Open Editor Now</a>
+        </div>
+
+        <!-- Section 1 -->
+        <h2 id="getting-started">1. Getting Started</h2>
+        <div class="step-box">
+            <h3>Loading an Existing File</h3>
+            <p>If you already have a configuration file (like <code>class6.json</code> or <code>class7.json</code>), you can load it directly into the editor to make changes.</p>
+            <ul class="feature-list">
+                <li><strong>Drag and Drop:</strong> Simply grab the JSON file from your computer folder, drag it into the web browser, and drop it anywhere on the editor page.</li>
+                <li><strong>Browse Files:</strong> Click the <strong>"Open File"</strong> button in the top navigation bar to locate the file via a standard file picker.</li>
+            </ul>
+            
+            <h3>Starting from Scratch</h3>
+            <p>If you are building a completely new class schedule (e.g., Class 8) and don't have a file yet, click the <strong>"New"</strong> button in the navigation bar. This gives you a blank canvas to start adding your subjects.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <h2 id="adding-subjects">2. Adding a Subject Block</h2>
+        <p>A "Subject Block" represents a specific subject (like Mathematics) taught in a specific language (like English) for a specific class grade.</p>
+        <div class="step-box">
+            <p>To add a new subject, scroll down and click the green <strong>"+ Add New Subject Block"</strong> button.</p>
+            <p>Fill in the following essential fields:</p>
+            <ul>
+                <li><strong>Class:</strong> The grade level (e.g., "6", "7").</li>
+                <li><strong>Subject:</strong> The name of the subject (e.g., "Science", "Mathematics").</li>
+                <li><strong>Medium:</strong> Use the dropdown to select "English" or "Telugu". This is crucial! Platform progress tracking relies on this being accurate to keep separate scores for different mediums.</li>
+            </ul>
+            
+            <h3>Course Overview</h3>
+            <p>Each subject can have an overview. Click <strong>"+ Add Course Overview"</strong> to provide a brief description and the estimated duration of the course (e.g., "Full Year"). This gives students a summary before they start.</p>
+        </div>
+
+        <!-- Section 3 -->
+        <h2 id="chapters-videos">3. Adding Chapters and Videos</h2>
+        <p>Inside each Subject Block, you organize your learning content chronologically into Chapters. Inside Chapters, you put your individual Video Lessons.</p>
+        
+        <div class="step-box">
+            <h3>Adding a Chapter</h3>
+            <p>Click the blue <strong>"Add Chapter"</strong> button inside your Subject Block. You can type the name of the chapter directly into the "Chapter Name" box (e.g., "Fractions and Decimals").</p>
+            
+            <h3>Adding Videos (Subtopics)</h3>
+            <p>Inside the chapter box on the left, click the green <strong>"Add Video"</strong> button to insert a new lesson.</p>
+            <ul>
+                <li><strong>Video Name:</strong> What the student will see in the sidebar list (e.g., "Introduction to Fractions").</li>
+                <li><strong>Description:</strong> The detailed text shown directly below the video player.</li>
+                <li><strong>YouTube Embed Link:</strong> The video URL. <strong>Important:</strong> You must use the <em>Embed</em> URL format provided by YouTube (e.g., <code>https://www.youtube.com/embed/XCGoZBj9hdE</code>), not the standard watch link.</li>
+            </ul>
+        </div>
+
+        <!-- Section 4 -->
+        <h2 id="resources">4. Adding Study Resources</h2>
+        <p>You can attach extra materials to a chapter, such as downloadable PDF notes, homework assignments, or external website links.</p>
+        <div class="step-box">
+            <p>Inside the chapter box (on the right side), click the teal <strong>"Add Resource"</strong> button.</p>
+            <ul>
+                <li><strong>Resource Name:</strong> The label for the button the student clicks (e.g., "Chapter 1 Notes", "Practice Problems").</li>
+                <li><strong>Link/URL:</strong> The direct web link to the PDF file or HTML page.</li>
+                <li><strong>Type:</strong> Use the dropdown to select if it is a <em>PDF Document</em> or an <em>HTML Link</em>. This ensures the platform shows the correct icon (a PDF logo vs a Globe).</li>
+            </ul>
+        </div>
+
+        <!-- Section 5 -->
+        <h2 id="saving">5. Saving and Applying Changes</h2>
+        <div class="warning-box">
+            <i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> The editor is a secure, offline-capable tool. It does not hack your website to save changes automatically. You must manually download the updated file to apply the changes to the live site!
+        </div>
+        <div class="step-box">
+            <p>As you type, the dark <strong>Live JSON Preview</strong> box on the right side of the screen updates automatically. When you are totally finished editing:</p>
+            <ol>
+                <li>Check the filename text box in the top navigation bar (it will usually say <code>class6.json</code>). You can rename it if necessary (e.g. <code>class8.json</code>).</li>
+                <li>Click the yellow <strong>"Download Updated JSON"</strong> button.</li>
+                <li>The file will be downloaded to your computer's default "Downloads" folder.</li>
+                <li>Open your project files and drag that downloaded file into the <strong><code>config/</code></strong> folder, replacing the old file of the same name.</li>
+                <li>Refresh your main platform page, and your new content will instantly be available to students!</li>
+            </ol>
+        </div>
+
+        <div class="text-center mt-5 mb-4">
+            <p>Ready to start building content?</p>
+            <a href="index.html" class="btn btn-lg btn-primary"><i class="fas fa-edit"></i> Open the Config Editor</a>
+        </div>
+    </div>
+</body>
+</html>

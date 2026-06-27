@@ -82,9 +82,9 @@
         ],
         "resources": [
           {
-            "name": "Test json",
-            "link": "test.json",
-            "type": "json"
+            "name": "Problem Set NCERT",
+            "link": "Chapter10PS NCERT.html",
+            "type": "html"
           },
           {
             "name": "Problem Set EM",

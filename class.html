@@ -160,11 +160,24 @@
             flex-shrink: 0;
             padding: 0 !important;
             margin: 0 !important;
+            position: relative;
+            overflow: hidden;
         }
         .video-player iframe {
             width: 100% !important;
             height: 100% !important;
             border: none;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        /* Mobile video fix - ensure iframe loads properly */
+        @supports (aspect-ratio: 16 / 9) {
+            .video-player iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
 
         /* ===== LESSON INFO ===== */
@@ -199,11 +212,34 @@
         .resources-section.show {
             display: block;
         }
-        .resources-section h3 {
+        .resources-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 8px;
+        }
+        .resources-header h3 {
             font-size: 12px;
             font-weight: 700;
             color: #29303b;
-            margin: 0 0 8px 0;
+            margin: 0;
+        }
+        .resources-header i.toggle-icon {
+            transition: transform 0.2s;
+            color: #6a6f73;
+            font-size: 12px;
+        }
+        .resources-section.collapsed .resources-header {
+            margin-bottom: 0;
+        }
+        .resources-section.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .resources-section.collapsed .resource-tabs,
+        .resources-section.collapsed .resource-list {
+            display: none;
         }
         .resource-tabs {
             display: flex;
@@ -474,13 +510,43 @@
                 font-size: 12px; /* Increased for desktop */
             }
         }
+
+        /* ===== MOBILE NAVBAR OPTIMIZATIONS ===== */
+        @media (max-width: 767px) {
+            .nav-left {
+                gap: 4px;
+            }
+            .nav-class-name {
+                display: none;
+            }
+            .nav-controls {
+                gap: 4px;
+                margin-left: 4px;
+            }
+            .nav-controls select {
+                font-size: 11px;
+                padding: 2px 14px 2px 4px;
+                height: 28px;
+                max-width: 105px;
+            }
+            #mediumSelect {
+                max-width: 75px;
+            }
+            .nav-progress {
+                gap: 4px;
+                font-size: 12px;
+            }
+            .progress-bar-nav {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <div class="navbar-top">
         <div class="nav-left">
-            <button class="nav-back" onclick="window.location.href='landing.html';" title="Back">
+            <button class="nav-back" onclick="window.location.href='index.html';" title="Back">
                 <i class="fas fa-arrow-left"></i>
             </button>
             <div class="nav-logo">
@@ -516,18 +582,28 @@
         <div class="main-content">
             <!-- Video Player -->
             <div class="video-player">
-                <iframe id="main-video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="main-video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-payment; xr-spatial-tracking" allowfullscreen allow-same-origin></iframe>
             </div>
 
             <!-- Lesson Info -->
             <div class="lesson-info">
-                <h2 id="lessonTitle">Select a lesson</h2>
-                <p class="lesson-description" id="lessonDescription">Choose a lesson from the list</p>
+                <div class="d-flex justify-content-between align-items-start align-items-sm-center flex-column flex-sm-row">
+                    <div style="flex: 1; min-width: 0; padding-right: 12px;">
+                        <h2 id="lessonTitle" style="margin-bottom: 4px;">Select a lesson</h2>
+                        <p class="lesson-description" id="lessonDescription">Choose a lesson from the list</p>
+                    </div>
+                    <a id="youtubeWatchBtn" href="#" target="_blank" class="btn btn-danger btn-sm mt-2 mt-sm-0" style="display: none; align-items: center; gap: 6px; font-weight: 500; font-size: 12px; white-space: nowrap; border-radius: 4px; background-color: #ff0000; border-color: #ff0000; color: white;">
+                        <i class="fab fa-youtube" style="font-size: 14px;"></i> Watch on YouTube
+                    </a>
+                </div>
             </div>
 
             <!-- Resources -->
-            <div class="resources-section" id="resourcesSection">
-                <h3>Resources</h3>
+            <div class="resources-section collapsed" id="resourcesSection">
+                <div class="resources-header" onclick="toggleResources()">
+                    <h3>Resources</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
                 <div class="resource-tabs" id="resourceTabs"></div>
                 <div class="resource-list" id="resourceList"></div>
             </div>
@@ -556,6 +632,34 @@
         let allLessons = [];
         let completedLessons = [];
         let phrases = ["Great job!", "Keep going!", "Awesome!", "You rock!"];
+        
+        // Mobile detection and optimization
+        const isMobileDevice = () => /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const IS_MOBILE = isMobileDevice();
+        
+        // Initialize mobile video fixes
+        if (IS_MOBILE) {
+            document.addEventListener('DOMContentLoaded', function() {
+                const videoPlayer = document.getElementById('main-video');
+                if (videoPlayer) {
+                    // Add mobile-specific attributes
+                    videoPlayer.setAttribute('playsinline', 'true');
+                    videoPlayer.setAttribute('webkit-playsinline', 'true');
+                    videoPlayer.setAttribute('controls', 'true');
+                    
+                    // Handle video errors on mobile
+                    videoPlayer.addEventListener('error', function(e) {
+                        console.warn('Video loading error on mobile:', e);
+                        // Attempt reload after delay
+                        setTimeout(() => {
+                            if (videoPlayer.src) {
+                                videoPlayer.src = videoPlayer.src;
+                            }
+                        }, 1000);
+                    });
+                }
+            });
+        }
 
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -627,16 +731,69 @@
         function playLesson(lessonElement, lessonData, chapterData) {
             // Support both new 'link' format and old 'videoUrl' format
             const videoUrl = lessonData.link || lessonData.videoUrl || '';
-            document.getElementById('main-video').src = videoUrl;
+            const videoPlayer = document.getElementById('main-video');
+            
+            // Clear and reset for mobile compatibility
+            videoPlayer.src = '';
+            
+            // Add a small delay for mobile to ensure proper clearing
+            setTimeout(() => {
+                videoPlayer.src = videoUrl;
+                
+                // Force reload on mobile to handle loading/stopping issues
+                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                    videoPlayer.load?.();
+                }
+            }, 50);
             
             const lessonName = currentMedium === 'Telugu' ? (lessonData.nameTelugu || lessonData.name) : lessonData.name;
             document.getElementById('lessonTitle').textContent = lessonName || 'Lesson';
             document.getElementById('lessonDescription').textContent = lessonData.description || 'Explore this topic to learn more.';
             
+            // Update YouTube Watch button
+            const watchBtn = document.getElementById('youtubeWatchBtn');
+            if (watchBtn) {
+                const watchLink = getYouTubeWatchLink(videoUrl);
+                if (watchLink) {
+                    watchBtn.href = watchLink;
+                    watchBtn.title = `Watch "${lessonName}" on YouTube`;
+                    watchBtn.style.display = 'inline-flex';
+                } else {
+                    watchBtn.style.display = 'none';
+                }
+            }
+
             document.querySelectorAll('.lesson').forEach(lesson => lesson.classList.remove('active'));
             if (lessonElement) lessonElement.classList.add('active');
 
             updateResourcesPanel(lessonData, chapterData);
+        }
+
+        function getYouTubeWatchLink(embedLink) {
+            if (!embedLink) return '';
+            const match = embedLink.match(/\/embed\/([a-zA-Z0-9_-]+)/);
+            if (match && match[1]) {
+                return `https://www.youtube.com/watch?v=${match[1]}`;
+            }
+            // If it's already a YouTube URL but not in embed format
+            if (embedLink.includes('youtube.com') || embedLink.includes('youtu.be')) {
+                return embedLink;
+            }
+            return '';
+        }
+
+        function resolveResourceLink(link) {
+            if (!link) return '';
+            // If it's already an absolute URL or a relative path starting with / or ./ or ../
+            if (/^(https?:\/\/|data:|mailto:|tel:|\/|\.\/|\.\.\/)/i.test(link)) {
+                return link;
+            }
+            // If it already explicitly references resources/ or resource/
+            if (/^(resources\/|resource\/)/i.test(link)) {
+                return link;
+            }
+            // Prepend resources/
+            return 'resources/' + link;
         }
 
         function updateResourcesPanel(lessonData, chapterData) {
@@ -662,6 +819,7 @@
             }
 
             resourcesSection.classList.add('show');
+            resourcesSection.classList.add('collapsed');
 
             resources.forEach((resource, index) => {
                 const iconClass = resource.type === 'video' ? 'fa-video' : (resource.type === 'pdf' ? 'fa-file-pdf' : 'fa-file-alt');
@@ -671,7 +829,7 @@
                 item.style.marginBottom = '6px';
                 item.innerHTML = `
                     <div class="resource-name"><i class="fas ${iconClass}" style="margin-right: 6px;"></i>${resource.name || 'Resource ' + (index + 1)}</div>
-                    <a href="${resource.link}" target="_blank" class="resource-btn">Open</a>
+                    <a href="${resolveResourceLink(resource.link)}" target="_blank" class="resource-btn">Open</a>
                 `;
                 resourceList.appendChild(item);
             });
@@ -679,6 +837,11 @@
 
         function displayResourcesOfType(type, lessonData) {
             // Deprecated: Kept for backwards compatibility if needed, but the logic is now handled entirely within updateResourcesPanel.
+        }
+
+        function toggleResources() {
+            const resourcesSection = document.getElementById('resourcesSection');
+            resourcesSection.classList.toggle('collapsed');
         }
 
         function toggleChapter(button) {
@@ -913,7 +1076,7 @@
                         chapter.resources.forEach(res => {
                             if (!res.link) return;
                             const resLink = document.createElement('a');
-                            resLink.href = res.link;
+                            resLink.href = resolveResourceLink(res.link);
                             resLink.target = '_blank';
                             resLink.style.cssText = 'display: block; font-size: 12px; color: #a435f0; padding: 4px 0; text-decoration: none;';
                             resLink.innerHTML = `<i class="fas fa-file-alt" style="margin-right:6px;"></i>${res.name || 'Resource'}`;

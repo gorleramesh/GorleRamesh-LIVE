@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "782234905627",
+    "project_id": "wantto010",
+    "storage_bucket": "wantto010.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782234905627:android:0ccdfe694556f93fdf5cbe",
+        "android_client_info": {
+          "package_name": "com.wantto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6MaS1FlJ2Q26jhocjTTNv5N7SdOXaBd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
