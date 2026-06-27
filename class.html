@@ -961,21 +961,34 @@
 
         function playLesson(lessonElement, lessonData, chapterData) {
             // Support both new 'link' format and old 'videoUrl' format
-            const videoUrl = lessonData.link || lessonData.videoUrl || '';
+            let videoUrl = lessonData.link || lessonData.videoUrl || '';
             const videoPlayer = document.getElementById('main-video');
             
-            // Clear and reset for mobile compatibility
-            videoPlayer.src = '';
-            
-            // Add a small delay for mobile to ensure proper clearing
-            setTimeout(() => {
-                videoPlayer.src = videoUrl;
-                
-                // Force reload on mobile to handle loading/stopping issues
-                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                    videoPlayer.load?.();
+            // Append enablejsapi=1 for YouTube API events
+            if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+                if (videoUrl.includes('?')) {
+                    if (!videoUrl.includes('enablejsapi=1')) {
+                        videoUrl += '&enablejsapi=1';
+                    }
+                } else {
+                    videoUrl += '?enablejsapi=1';
                 }
-            }, 50);
+            }
+            
+            // Check if ytPlayer is active and initialized
+            if (ytPlayer && typeof ytPlayer.loadVideoByUrl === 'function') {
+                try {
+                    ytPlayer.loadVideoByUrl(videoUrl);
+                } catch (e) {
+                    console.log('YT API load failed, falling back to src:', e);
+                    videoPlayer.src = videoUrl;
+                }
+            } else {
+                videoPlayer.src = videoUrl;
+                if (typeof YT !== 'undefined' && YT.Player && !ytPlayer) {
+                    setTimeout(initYTPlayer, 1000);
+                }
+            }
             
             const lessonName = currentMedium === 'Telugu' ? (lessonData.nameTelugu || lessonData.name) : lessonData.name;
             document.getElementById('lessonTitle').textContent = lessonName || 'Lesson';
@@ -1362,11 +1375,13 @@
             }
 
             if (!foundAnyLesson) {
-                sidebarContent.innerHTML = `<p style="padding: 16px; color: #6a6f73; font-size: 13px;">No video lessons available for this subject.</p>`;
+                if (sidebarContent.children.length === 0) {
+                    sidebarContent.innerHTML = `<p style="padding: 16px; color: #6a6f73; font-size: 13px;">No content available for this subject.</p>`;
+                }
                 // Clear video player
                 document.getElementById('main-video').src = '';
-                document.getElementById('lessonTitle').textContent = 'No lessons found';
-                document.getElementById('lessonDescription').textContent = 'Try selecting another subject.';
+                document.getElementById('lessonTitle').textContent = 'Resources & Study Materials';
+                document.getElementById('lessonDescription').textContent = 'This subject contains study resources. Please select files from the chapters in the sidebar.';
             }
 
             updateProgress();
@@ -1416,6 +1431,93 @@
             if (input) {
                 input.value = '';
                 filterSidebar('');
+            }
+        }
+
+        // ===== AUTOPLAY NEXT LESSON FUNCTIONALITY =====
+        let ytPlayer = null;
+
+        // Load YouTube Iframe Player API dynamically
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        window.onYouTubeIframeAPIReady = function() {
+            initYTPlayer();
+        };
+
+        function initYTPlayer() {
+            if (ytPlayer) {
+                try {
+                    ytPlayer.destroy();
+                } catch(e) {}
+            }
+            const iframe = document.getElementById('main-video');
+            if (iframe && typeof YT !== 'undefined' && YT.Player) {
+                try {
+                    ytPlayer = new YT.Player('main-video', {
+                        events: {
+                            'onStateChange': onPlayerStateChange
+                        }
+                    });
+                } catch(e) {
+                    console.log('Error initializing YT Player API:', e);
+                }
+            }
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === 0) { // YT.PlayerState.ENDED
+                // Autocomplete active lesson checkbox
+                const activeLesson = document.querySelector('.lesson.active');
+                if (activeLesson) {
+                    const checkbox = activeLesson.querySelector('.lesson-checkbox');
+                    if (checkbox && !checkbox.checked) {
+                        checkbox.checked = true;
+                        // Fire change event to save progress
+                        checkbox.dispatchEvent(new Event('change'));
+                        showToast("Lesson completed! 🎉");
+                    }
+                }
+                
+                // Load next lesson automatically
+                playNextLesson();
+            }
+        }
+
+        function playNextLesson() {
+            const lessons = Array.from(document.querySelectorAll('.lesson'));
+            const activeIndex = lessons.findIndex(lesson => lesson.classList.contains('active'));
+            
+            if (activeIndex !== -1 && activeIndex < lessons.length - 1) {
+                let nextIndex = activeIndex + 1;
+                while (nextIndex < lessons.length) {
+                    const nextLesson = lessons[nextIndex];
+                    // Skip hidden elements (filtered out by search)
+                    if (nextLesson.style.display !== 'none') {
+                        const clickableInfo = nextLesson.querySelector('.lesson-info-item');
+                        if (clickableInfo) {
+                            showToast("Autoplay: Loading next lesson...");
+                            setTimeout(() => {
+                                clickableInfo.click();
+                            }, 1000); // 1s smooth transition delay
+                        }
+                        break;
+                    }
+                    nextIndex++;
+                }
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            if (toast) {
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
             }
         }
 
