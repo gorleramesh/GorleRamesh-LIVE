@@ -152,6 +152,18 @@
             text-align: center;
             box-shadow: var(--hero-shadow);
         }
+        .hero-illustration {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 8px 24px rgba(168, 85, 247, 0.12));
+            transition: transform 0.3s ease;
+        }
+        .hero-illustration:hover {
+            transform: scale(1.05);
+        }
         .hero h1 {
             font-size: 26px;
             font-weight: 800;
@@ -361,6 +373,10 @@
                 margin: 32px auto;
                 max-width: 900px;
             }
+            .hero-illustration {
+                max-width: 320px;
+                margin-bottom: 12px;
+            }
             .hero h1 {
                 font-size: 34px;
             }
@@ -408,14 +424,14 @@
             gap: 8px;
             margin-top: 16px;
             padding: 10px 22px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
+            background: rgba(255, 0, 0, 0.04);
+            border: 1px solid rgba(255, 0, 0, 0.2);
             color: var(--text-main) !important;
-            border-radius: 30px;
+            border-radius: 6px;
             font-size: 13px;
             font-weight: 600;
             text-decoration: none;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 2px 8px rgba(255, 0, 0, 0.05);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .hero-youtube-btn i {
@@ -423,10 +439,10 @@
             font-size: 15px;
         }
         .hero-youtube-btn:hover {
-            background: rgba(168, 85, 247, 0.1);
-            border-color: var(--icon-color);
+            background: rgba(255, 0, 0, 0.08);
+            border-color: rgba(255, 0, 0, 0.45);
             transform: translateY(-2px);
-            box-shadow: var(--card-shadow-hover);
+            box-shadow: 0 4px 16px rgba(255, 0, 0, 0.12);
             text-decoration: none;
         }
     </style>
@@ -444,6 +460,7 @@
 
     <!-- Hero Section -->
     <div class="hero">
+        <img src="illustrations/home.svg" alt="Learn From Home Illustration" class="hero-illustration">
         <h1>Learn From Home</h1>
         <p>All Classes • All Subjects • Multiple Languages</p>
         <a href="https://www.youtube.com/@gorleramesh" target="_blank" class="hero-youtube-btn">

@@ -667,6 +667,34 @@
             background: rgba(255, 255, 255, 0.08) !important;
             color: #ffffff !important;
         }
+
+        .youtube-watch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            font-size: 12px;
+            white-space: nowrap;
+            border-radius: 6px;
+            background: rgba(255, 0, 0, 0.04);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            color: var(--text-main) !important;
+            padding: 6px 14px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(255, 0, 0, 0.05);
+        }
+        .youtube-watch-btn i {
+            color: #ff0000;
+            font-size: 14px;
+        }
+        .youtube-watch-btn:hover {
+            background: rgba(255, 0, 0, 0.08);
+            border-color: rgba(255, 0, 0, 0.45);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.12);
+            text-decoration: none;
+        }
      </style>
 </head>
 <body>
@@ -722,8 +750,8 @@
                         <h2 id="lessonTitle" style="margin-bottom: 4px;">Select a lesson</h2>
                         <p class="lesson-description" id="lessonDescription">Choose a lesson from the list</p>
                     </div>
-                    <a id="youtubeWatchBtn" href="#" target="_blank" class="btn btn-danger btn-sm mt-2 mt-sm-0" style="display: none; align-items: center; gap: 6px; font-weight: 500; font-size: 12px; white-space: nowrap; border-radius: 4px; background-color: #ff0000; border-color: #ff0000; color: white;">
-                        <i class="fab fa-youtube" style="font-size: 14px;"></i> Watch on YouTube
+                    <a id="youtubeWatchBtn" href="#" target="_blank" class="youtube-watch-btn mt-2 mt-sm-0" style="display: none;">
+                        <i class="fab fa-youtube"></i> Watch video on YouTube
                     </a>
                 </div>
             </div>
