@@ -247,7 +247,7 @@
             transform: scale(1.05);
         }
         .subjects-container {
-            padding: 0 16px 24px;
+            padding: 10px 16px 24px;
             display: flex;
             flex-direction: row;
             overflow-x: auto;
@@ -397,7 +397,7 @@
                 margin: 0 auto 24px;
             }
             .subjects-container {
-                padding: 0;
+                padding: 10px 0 0;
                 flex-direction: row;
                 flex-wrap: wrap;
                 gap: 20px;
@@ -579,6 +579,22 @@
             color: var(--icon-color);
             border-radius: 10px;
             flex-shrink: 0;
+        }
+
+        /* ===== CUSTOM SCROLLBARS ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, 0.25);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(168, 85, 247, 0.5);
         }
     </style>
 </head>

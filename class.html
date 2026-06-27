@@ -695,6 +695,22 @@
             box-shadow: 0 4px 12px rgba(255, 0, 0, 0.12);
             text-decoration: none;
         }
+
+        /* ===== CUSTOM SCROLLBARS ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, 0.25);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(168, 85, 247, 0.5);
+        }
      </style>
 </head>
 <body>
@@ -771,6 +787,13 @@
         <div class="sidebar">
             <div class="sidebar-header">
                 <i class="fas fa-book"></i> Chapters & Lessons
+            </div>
+            <div class="sidebar-search" style="padding: 10px 14px; border-bottom: 1px solid var(--panel-border); background: var(--sidebar-header-bg);">
+                <div style="position: relative; display: flex; align-items: center;">
+                    <i class="fas fa-search" style="position: absolute; left: 10px; color: var(--text-meta); font-size: 12px;"></i>
+                    <input type="text" id="sidebarSearchInput" placeholder="Search lessons..." oninput="filterSidebar(this.value)" style="width: 100%; padding: 6px 10px 6px 28px; border-radius: 6px; border: 1px solid var(--panel-border); background: var(--chapter-header-bg); color: var(--text-main); font-size: 12px; outline: none; transition: all 0.2s ease;">
+                    <i class="fas fa-times-circle" id="sidebarSearchClear" onclick="clearSidebarSearch()" style="position: absolute; right: 10px; color: var(--text-meta); font-size: 12px; cursor: pointer; display: none;"></i>
+                </div>
             </div>
             <div class="sidebar-content" id="sidebar-content">
                 <p style="padding: 16px; color: #6a6f73; font-size: 13px;">Loading content...</p>
@@ -1181,6 +1204,14 @@
         function loadSubject(subjectName) {
             currentSubject = subjectName;
             
+            // Reset sidebar search input
+            const searchInput = document.getElementById('sidebarSearchInput');
+            if (searchInput) {
+                searchInput.value = '';
+                const clearBtn = document.getElementById('sidebarSearchClear');
+                if (clearBtn) clearBtn.style.display = 'none';
+            }
+            
             // Check for medium specific data if needed. Currently JSON has 'medium' field, we can filter by it if multiple exist, 
             // but usually it's just 'English' in the json. We'll filter if possible, otherwise fallback to first match.
             let subject = courseData.find(s => s.subject === subjectName && s.medium === currentMedium);
@@ -1339,6 +1370,53 @@
             }
 
             updateProgress();
+        }
+
+        function filterSidebar(query) {
+            const clearBtn = document.getElementById('sidebarSearchClear');
+            if (query.trim().length > 0) {
+                clearBtn.style.display = 'block';
+            } else {
+                clearBtn.style.display = 'none';
+            }
+
+            const filterText = query.toLowerCase().trim();
+            const chapters = document.querySelectorAll('.chapter-section');
+
+            chapters.forEach(chapter => {
+                const headerText = chapter.querySelector('.chapter-header span')?.textContent.toLowerCase() || '';
+                const lessons = chapter.querySelectorAll('.lesson');
+                let matchesLessonCount = 0;
+
+                lessons.forEach(lesson => {
+                    const lessonNameText = lesson.querySelector('.lesson-name')?.textContent.toLowerCase() || '';
+                    if (lessonNameText.includes(filterText)) {
+                        lesson.style.setProperty('display', 'flex', 'important');
+                        matchesLessonCount++;
+                    } else {
+                        lesson.style.setProperty('display', 'none', 'important');
+                    }
+                });
+
+                if (headerText.includes(filterText)) {
+                    lessons.forEach(lesson => {
+                        lesson.style.setProperty('display', 'flex', 'important');
+                    });
+                    chapter.style.setProperty('display', 'block', 'important');
+                } else if (matchesLessonCount > 0) {
+                    chapter.style.setProperty('display', 'block', 'important');
+                } else {
+                    chapter.style.setProperty('display', 'none', 'important');
+                }
+            });
+        }
+
+        function clearSidebarSearch() {
+            const input = document.getElementById('sidebarSearchInput');
+            if (input) {
+                input.value = '';
+                filterSidebar('');
+            }
         }
 
         // Initialize
