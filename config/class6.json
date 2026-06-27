@@ -26,9 +26,9 @@
         ],
         "resources": [
           {
-            "name": "Problem Set",
-            "link": "Chapter7PS EM.html",
-            "type": "html"
+            "name": "test",
+            "link": "test.json",
+            "type": "json"
           },
           {
             "name": "Sample pdf",

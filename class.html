@@ -7,6 +7,76 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            /* Light theme variables (default) */
+            --bg-color: #f3f4f6;
+            --bg-gradient: 
+                radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.08) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.06) 0px, transparent 50%);
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --text-meta: #6b7280;
+            --navbar-bg: rgba(255, 255, 255, 0.8);
+            --navbar-text: #1f2937;
+            --navbar-border: rgba(0, 0, 0, 0.06);
+            --navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --main-bg: transparent;
+            --panel-bg: rgba(255, 255, 255, 0.55);
+            --panel-border: rgba(255, 255, 255, 0.6);
+            --panel-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+            --sidebar-bg: rgba(255, 255, 255, 0.65);
+            --sidebar-header-bg: rgba(255, 255, 255, 0.85);
+            --chapter-header-bg: rgba(255, 255, 255, 0.45);
+            --chapter-header-hover: rgba(255, 255, 255, 0.7);
+            --chapter-content-bg: rgba(255, 255, 255, 0.25);
+            --lesson-bg-hover: rgba(255, 255, 255, 0.5);
+            --lesson-bg-active: rgba(168, 85, 247, 0.12);
+            --lesson-text-active: #7c3aed;
+            --lesson-border-active: #7c3aed;
+            --progress-bar-bg: rgba(0, 0, 0, 0.06);
+            --icon-color: #7c3aed;
+            --btn-watch-bg: #ff0000;
+            --btn-watch-border: #ff0000;
+            --btn-watch-text: #ffffff;
+            --btn-watch-hover: #cc0000;
+        }
+
+        body.dark-theme {
+            /* Dark theme variables */
+            --bg-color: #0b0d19;
+            --bg-gradient: 
+                radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
+            --text-main: #f1f3f9;
+            --text-muted: #a1a1aa;
+            --text-meta: #9ca3af;
+            --navbar-bg: rgba(11, 13, 25, 0.75);
+            --navbar-text: #ffffff;
+            --navbar-border: rgba(255, 255, 255, 0.08);
+            --navbar-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            --main-bg: transparent;
+            --panel-bg: rgba(255, 255, 255, 0.02);
+            --panel-border: rgba(255, 255, 255, 0.05);
+            --panel-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            --sidebar-bg: rgba(17, 20, 34, 0.65);
+            --sidebar-header-bg: rgba(11, 13, 25, 0.85);
+            --chapter-header-bg: rgba(255, 255, 255, 0.02);
+            --chapter-header-hover: rgba(255, 255, 255, 0.05);
+            --chapter-content-bg: rgba(0, 0, 0, 0.15);
+            --lesson-bg-hover: rgba(255, 255, 255, 0.03);
+            --lesson-bg-active: rgba(168, 85, 247, 0.15);
+            --lesson-text-active: #c084fc;
+            --lesson-border-active: #c084fc;
+            --progress-bar-bg: rgba(255, 255, 255, 0.1);
+            --icon-color: #c084fc;
+            --btn-watch-bg: #ff0000;
+            --btn-watch-border: #ff0000;
+            --btn-watch-text: #ffffff;
+            --btn-watch-hover: #cc0000;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -19,20 +89,28 @@
         }
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f7f9fa;
-            color: #29303b;
+            background-color: var(--bg-color);
+            background-image: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* ===== NAVBAR ===== */
         .navbar-top {
-            background: white;
-            border-bottom: 1px solid #e7e9ec;
+            background: var(--navbar-bg);
+            border-bottom: 1px solid var(--navbar-border);
+            box-shadow: var(--navbar-shadow);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 8px 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 55px; /* slightly taller for dropdowns */
+            height: 55px;
             flex-shrink: 0;
+            transition: all 0.3s ease;
         }
         .nav-left {
             display: flex;
@@ -44,7 +122,7 @@
         .nav-back {
             background: none;
             border: none;
-            color: #a435f0;
+            color: var(--icon-color);
             cursor: pointer;
             font-size: 18px;
             padding: 5px;
@@ -52,12 +130,16 @@
             align-items: center;
             height: 30px;
             flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+        .nav-back:hover {
+            transform: translateX(-2px);
         }
         .nav-logo {
             display: none;
             align-items: center;
             gap: 6px;
-            color: #a435f0;
+            color: var(--icon-color);
             font-weight: 700;
             font-size: 13px;
             white-space: nowrap;
@@ -68,7 +150,7 @@
         .nav-class-name {
             font-size: 13px;
             font-weight: 600;
-            color: #29303b;
+            color: var(--text-main);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -83,37 +165,37 @@
             padding: 2px 20px 2px 8px;
             height: 28px;
             border-radius: 4px;
-            border: 1px solid #e7e9ec;
-            appearance: auto; /* ensure dropdown arrow shows */
-            background-color: #f7f9fa;
-            color: #29303b;
+            border: 1px solid var(--navbar-border);
+            appearance: auto;
+            background-color: var(--navbar-bg);
+            color: var(--text-main);
             font-weight: 500;
             cursor: pointer;
+            outline: none;
+            transition: all 0.2s ease;
         }
         .nav-controls select:focus {
-            outline: none;
-            border-color: #a435f0;
-            box-shadow: 0 0 0 2px rgba(164, 53, 240, 0.1);
+            border-color: var(--icon-color);
         }
         .nav-progress {
-            display: flex; /* Always visible now */
+            display: flex;
             align-items: center;
             gap: 8px;
             font-size: 13px;
             font-weight: 600;
-            color: #29303b;
+            color: var(--text-main);
             flex-shrink: 0;
         }
         .progress-bar-nav {
             width: 80px;
             height: 6px;
-            background: #e7e9ec;
+            background: var(--progress-bar-bg);
             border-radius: 3px;
             overflow: hidden;
         }
         .progress-bar-nav-fill {
             height: 100%;
-            background: #a435f0;
+            background: var(--icon-color);
             transition: width 0.3s;
         }
 
@@ -123,13 +205,13 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: #a435f0;
+            background: var(--icon-color);
             color: white;
             padding: 12px 24px;
             border-radius: 30px;
             font-weight: 600;
             font-size: 14px;
-            box-shadow: 0 4px 12px rgba(164,53,240,0.3);
+            box-shadow: 0 4px 12px rgba(164, 53, 240, 0.3);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1000;
             pointer-events: none;
@@ -144,12 +226,12 @@
         .main-container {
             display: flex;
             flex-direction: column;
-            /* Mobile uses native page scrolling */
         }
         .main-content {
-            background: #f7f9fa; /* Light background */
+            background: var(--main-bg);
             display: flex;
             flex-direction: column;
+            padding: 0;
         }
 
         /* ===== VIDEO PLAYER ===== */
@@ -171,7 +253,6 @@
             margin: 0;
             padding: 0;
         }
-        /* Mobile video fix - ensure iframe loads properly */
         @supports (aspect-ratio: 16 / 9) {
             .video-player iframe {
                 position: absolute;
@@ -182,32 +263,37 @@
 
         /* ===== LESSON INFO ===== */
         .lesson-info {
-            background: white;
-            padding: 12px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--panel-border);
+            padding: 16px;
             flex-shrink: 0;
-            border-bottom: 1px solid #e7e9ec;
+            box-shadow: var(--panel-shadow);
         }
         .lesson-info h2 {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
-            color: #29303b;
+            color: var(--heading-color);
             margin-bottom: 4px;
-            margin: 0 0 4px 0;
         }
         .lesson-description {
-            font-size: 12px;
-            color: #6a6f73;
-            line-height: 1.4;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
             margin: 0;
         }
 
         /* ===== RESOURCES ===== */
         .resources-section {
-            background: white;
-            padding: 12px;
-            border-bottom: 1px solid #e7e9ec;
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--panel-border);
+            padding: 16px;
             flex-shrink: 0;
             display: none;
+            box-shadow: var(--panel-shadow);
         }
         .resources-section.show {
             display: block;
@@ -221,14 +307,14 @@
             margin-bottom: 8px;
         }
         .resources-header h3 {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
-            color: #29303b;
+            color: var(--heading-color);
             margin: 0;
         }
         .resources-header i.toggle-icon {
             transition: transform 0.2s;
-            color: #6a6f73;
+            color: var(--text-meta);
             font-size: 12px;
         }
         .resources-section.collapsed .resources-header {
@@ -252,25 +338,25 @@
             height: 2px;
         }
         .resource-tabs::-webkit-scrollbar-thumb {
-            background: #a435f0;
+            background: var(--icon-color);
             border-radius: 2px;
         }
         .resource-tab {
             padding: 5px 10px;
-            border: 1px solid #e7e9ec;
+            border: 1px solid var(--panel-border);
             border-radius: 4px;
-            background: white;
+            background: var(--chapter-header-bg);
             cursor: pointer;
             font-weight: 500;
             font-size: 10px;
-            color: #6a6f73;
+            color: var(--text-muted);
             white-space: nowrap;
             transition: all 0.2s;
         }
         .resource-tab.active {
-            border-color: #a435f0;
-            color: #a435f0;
-            background: #f3e5ff;
+            border-color: var(--icon-color);
+            color: var(--icon-color);
+            background: rgba(168, 85, 247, 0.1);
         }
         .resource-list {
             display: flex;
@@ -278,71 +364,109 @@
             gap: 6px;
         }
         .resource-item {
-            padding: 8px;
-            background: #f7f9fa;
-            border-radius: 4px;
+            padding: 10px 12px;
+            background: var(--chapter-header-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .resource-item:hover {
+            background: var(--chapter-header-hover);
+            border-color: var(--icon-color);
         }
         .resource-name {
             font-weight: 500;
-            color: #29303b;
-            font-size: 11px;
+            color: var(--text-main);
+            font-size: 12px;
         }
         .resource-btn {
-            background: #a435f0;
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
             color: white;
             border: none;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 10px;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 11px;
             font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.25);
+            transition: all 0.2s ease;
+        }
+        .resource-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35);
+            color: white;
+            text-decoration: none;
+        }
+
+        .chapter-resources-container {
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.02);
+            border-top: 1px solid var(--panel-border);
+        }
+        body.dark-theme .chapter-resources-container {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .chapter-resource-link {
+            display: block;
+            font-size: 12px;
+            color: var(--icon-color);
+            padding: 4px 0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .chapter-resource-link:hover {
+            text-decoration: underline;
+            color: var(--lesson-text-active);
         }
 
         /* ===== SIDEBAR ===== */
         .sidebar {
             width: 100%;
-            background: white;
-            border-top: 1px solid #e7e9ec;
+            background: var(--sidebar-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--panel-border);
             display: flex;
             flex-direction: column;
         }
         .sidebar-header {
-            padding: 10px 12px;
-            border-bottom: 1px solid #e7e9ec;
-            background: #f7f9fa;
-            font-weight: 600;
-            font-size: 13px; /* Slightly increased for mobile */
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--panel-border);
+            background: var(--sidebar-header-bg);
+            font-weight: 700;
+            font-size: 14px;
             flex-shrink: 0;
-            color: #29303b;
+            color: var(--text-main);
         }
         .sidebar-content {
             overflow-y: auto;
             flex: 1;
         }
         .chapter-section {
-            border-bottom: 1px solid #e7e9ec;
+            border-bottom: 1px solid var(--panel-border);
         }
         .chapter-header {
-            padding: 10px 12px; /* Increased padding */
-            background: #f7f9fa;
+            padding: 12px 16px;
+            background: var(--chapter-header-bg);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: #29303b;
+            color: var(--text-main);
             border: none;
-            font-size: 12px; /* Slightly increased */
+            font-size: 13px;
             width: 100%;
             text-align: left;
+            transition: background 0.2s ease;
         }
-        .chapter-header:active {
-            background: #f0f0f0;
+        .chapter-header:hover {
+            background: var(--chapter-header-hover);
         }
         .chapter-header .toggle-icon {
             transition: transform 0.2s;
@@ -353,50 +477,54 @@
         }
         .chapter-content {
             display: none;
+            background: var(--chapter-content-bg);
             padding: 0;
         }
         .chapter-content.show {
             display: block;
         }
         .lesson {
-            padding: 10px 12px; /* Increased padding */
-            border-bottom: 1px solid #e7e9ec;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--panel-border);
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px; /* Increased gap */
-            transition: background 0.2s;
-            font-size: 12px; /* Increased */
+            gap: 12px;
+            transition: all 0.2s ease;
+            font-size: 13px;
+            color: var(--text-main);
         }
-        .lesson:active {
-            background: #f7f9fa;
+        .lesson:hover {
+            background: var(--lesson-bg-hover);
         }
         .lesson.active {
-            background: #f3e5ff;
-            border-left: 3px solid #a435f0;
-            padding-left: 12px;
+            background: var(--lesson-bg-active);
+            border-left: 4px solid var(--lesson-border-active);
+            color: var(--lesson-text-active);
+            padding-left: 14px;
         }
         .lesson-checkbox {
             width: 16px;
             height: 16px;
             cursor: pointer;
             flex-shrink: 0;
+            accent-color: var(--icon-color);
         }
         .lesson-info-item {
             flex: 1;
         }
         .lesson-name {
-            font-weight: 500;
-            color: #29303b;
-            font-size: 12px; /* Increased */
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 13px;
         }
         .lesson-duration {
-            font-size: 11px; /* Increased */
-            color: #6a6f73;
+            font-size: 11px;
+            color: var(--text-meta);
             margin-top: 2px;
         }
         .lesson-icon {
-            color: #a435f0;
+            color: var(--icon-color);
             font-size: 12px;
             flex-shrink: 0;
         }
@@ -409,7 +537,7 @@
             }
             .navbar-top {
                 padding: 10px 20px;
-                height: 60px; /* Taller on desktop */
+                height: 60px;
             }
             .nav-logo {
                 display: flex;
@@ -418,12 +546,12 @@
                 display: flex;
             }
             .nav-controls select {
-                font-size: 14px; /* Larger font on desktop */
+                font-size: 14px;
                 height: 32px;
                 padding: 2px 24px 2px 10px;
             }
             .nav-class-name {
-                font-size: 15px; /* Increased */
+                font-size: 15px;
             }
             .main-container {
                 flex-direction: row;
@@ -432,82 +560,74 @@
             }
             .main-content {
                 flex: 1;
-                flex-direction: column;
-                background: #f7f9fa;
                 overflow-y: auto;
-                padding: 20px;
+                padding: 24px;
+                gap: 20px;
             }
             .video-player {
                 aspect-ratio: 16 / 9;
-                margin-bottom: 20px;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            }
-            .video-player iframe {
-                height: 100% !important;
+                border-radius: 16px;
+                box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+                border: 1px solid var(--panel-border);
             }
             .lesson-info {
-                background: white;
-                padding: 24px; /* Increased padding */
-                border-radius: 8px;
-                margin-bottom: 20px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-                border: none;
+                background: var(--panel-bg);
+                padding: 24px;
+                border-radius: 16px;
+                border: 1px solid var(--panel-border);
+                box-shadow: var(--panel-shadow);
+                margin-bottom: 0;
             }
             .lesson-info h2 {
-                font-size: 24px; /* Increased for desktop */
-                margin-bottom: 10px;
+                font-size: 22px;
             }
             .lesson-description {
-                font-size: 16px; /* Increased for desktop */
-                line-height: 1.5;
+                font-size: 14px;
             }
             .resources-section {
-                background: white;
+                background: var(--panel-bg);
                 padding: 24px;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-                border: none;
-                margin-bottom: 20px;
+                border-radius: 16px;
+                border: 1px solid var(--panel-border);
+                box-shadow: var(--panel-shadow);
+                margin-bottom: 0;
             }
             .resources-section h3 {
-                font-size: 16px; /* Increased */
+                font-size: 16px;
             }
             .resource-name {
-                font-size: 13px; /* Increased */
+                font-size: 13px;
             }
             .resource-btn {
-                font-size: 12px; /* Increased */
-                padding: 6px 12px;
+                font-size: 12px;
+                padding: 6px 16px;
             }
             .resource-tab {
-                font-size: 12px; /* Increased */
+                font-size: 12px;
                 padding: 6px 12px;
             }
             .sidebar {
-                width: 320px; /* Slightly wider */
+                width: 340px;
                 border-top: none;
-                border-left: 1px solid #e7e9ec;
-                border-radius: 0;
+                border-left: 1px solid var(--panel-border);
                 overflow-y: auto;
             }
             .sidebar-header {
-                font-size: 16px; /* Increased for desktop */
+                font-size: 15px;
                 padding: 16px 20px;
             }
             .chapter-header {
-                font-size: 15px; /* Increased for desktop */
+                font-size: 14px;
                 padding: 14px 20px;
             }
             .lesson {
                 padding: 12px 20px;
             }
             .lesson-name {
-                font-size: 14px; /* Increased for desktop */
+                font-size: 13px;
             }
             .lesson-duration {
-                font-size: 12px; /* Increased for desktop */
+                font-size: 12px;
             }
         }
 
@@ -540,7 +660,14 @@
                 display: none;
             }
         }
-    </style>
+
+        /* ===== DARK THEME OVERRIDES FOR DYNAMIC BUTTONS ===== */
+        body.dark-theme .theme-toggle-btn {
+            border-color: rgba(255, 255, 255, 0.15) !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            color: #ffffff !important;
+        }
+     </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -571,6 +698,9 @@
             <div class="progress-bar-nav">
                 <div class="progress-bar-nav-fill" id="progressBarFill" style="width: 0%"></div>
             </div>
+            <button id="themeToggleBtn" class="theme-toggle-btn ml-2" onclick="toggleTheme()" title="Toggle Light/Dark Mode" style="border: 1px solid #e7e9ec; background: #f7f9fa; color: #29303b; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; outline: none; transition: all 0.3s;">
+                <i id="themeIcon" class="fas fa-moon" style="font-size: 11px;"></i>
+            </button>
         </div>
     </div>
 
@@ -625,6 +755,55 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
+        function getPreferredTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            // Fallback to system preference
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            return systemPrefersDark ? 'dark' : 'light';
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            if (isDark) {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+        
+        // Initialize theme on load (as early as possible to avoid flash of light mode if dark is selected)
+        (function() {
+            const theme = getPreferredTheme();
+            const body = document.body;
+            
+            if (theme === 'dark') {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+            
+            // Wait for DOM to set toggle icon
+            document.addEventListener('DOMContentLoaded', () => {
+                const themeIcon = document.getElementById('themeIcon');
+                if (themeIcon) {
+                    if (body.classList.contains('dark-theme')) {
+                        themeIcon.className = 'fas fa-sun';
+                    } else {
+                        themeIcon.className = 'fas fa-moon';
+                    }
+                }
+            });
+        })();
+
         let currentClass = '';
         let courseData = [];
         let currentSubject = null;
@@ -632,6 +811,7 @@
         let allLessons = [];
         let completedLessons = [];
         let phrases = ["Great job!", "Keep going!", "Awesome!", "You rock!"];
+        let currentSubjectData = null;
         
         // Mobile detection and optimization
         const isMobileDevice = () => /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -806,11 +986,13 @@
 
             let resources = [];
             
-            // Collect resources from lesson or chapter
-            if (lessonData && lessonData.resources && Array.isArray(lessonData.resources)) {
+            // Collect resources from lesson, chapter, or subject
+            if (lessonData && lessonData.resources && Array.isArray(lessonData.resources) && lessonData.resources.length > 0) {
                 resources = lessonData.resources;
-            } else if (chapterData && chapterData.resources && Array.isArray(chapterData.resources)) {
+            } else if (chapterData && chapterData.resources && Array.isArray(chapterData.resources) && chapterData.resources.length > 0) {
                 resources = chapterData.resources;
+            } else if (currentSubjectData && currentSubjectData.resources && Array.isArray(currentSubjectData.resources)) {
+                resources = currentSubjectData.resources;
             }
 
             if (!resources || resources.length === 0) {
@@ -983,6 +1165,8 @@
                 document.getElementById('sidebar-content').innerHTML = `<p style="padding: 16px; color: #dc3545; font-size: 13px;">Subject not found in data.</p>`;
                 return;
             }
+            
+            currentSubjectData = subject;
 
             // Load progress for this subject BEFORE rendering
             loadProgress();
@@ -1006,7 +1190,12 @@
                     chapterHeader.onclick = () => toggleChapter(chapterHeader);
                     
                     const chapterTitle = currentMedium === 'Telugu' ? (chapter.chapterTitleTelugu || chapter.chapterTitle || chapter.chapter) : (chapter.chapterTitle || chapter.chapter || 'Chapter');
-                    chapterHeader.innerHTML = `<span>${chapterTitle}</span><i class="fas fa-chevron-down toggle-icon"></i>`;
+                    let resourceBadge = '';
+                    if (chapter.resources && Array.isArray(chapter.resources) && chapter.resources.length > 0) {
+                        const count = chapter.resources.length;
+                        resourceBadge = ` <span class="chapter-resource-badge" style="color: var(--icon-color); font-size: 11px; font-weight: 600; margin-left: 6px; display: inline-flex; align-items: center; gap: 2px;"><i class="fas fa-paperclip" style="font-size: 9px;"></i>${count} Resource${count > 1 ? 's' : ''}</span>`;
+                    }
+                    chapterHeader.innerHTML = `<span>${chapterTitle}${resourceBadge}</span><i class="fas fa-chevron-down toggle-icon"></i>`;
 
                     const chapterContent = document.createElement('div');
                     chapterContent.className = 'chapter-content show'; // start expanded
@@ -1072,16 +1261,14 @@
                     // Also handle 'resources' array directly under chapter if any
                     if (chapter.resources && chapter.resources.length > 0) {
                         const resContainer = document.createElement('div');
-                        resContainer.style.cssText = 'padding: 8px 12px; background: #faf7ff; border-top: 1px solid #e7e9ec;';
+                        resContainer.className = 'chapter-resources-container';
                         chapter.resources.forEach(res => {
                             if (!res.link) return;
                             const resLink = document.createElement('a');
                             resLink.href = resolveResourceLink(res.link);
                             resLink.target = '_blank';
-                            resLink.style.cssText = 'display: block; font-size: 12px; color: #a435f0; padding: 4px 0; text-decoration: none;';
+                            resLink.className = 'chapter-resource-link';
                             resLink.innerHTML = `<i class="fas fa-file-alt" style="margin-right:6px;"></i>${res.name || 'Resource'}`;
-                            resLink.onmouseover = () => resLink.style.textDecoration = 'underline';
-                            resLink.onmouseout = () => resLink.style.textDecoration = 'none';
                             resContainer.appendChild(resLink);
                         });
                         chapterContent.appendChild(resContainer);
